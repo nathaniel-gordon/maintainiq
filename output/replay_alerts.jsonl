@@ -1,0 +1,604 @@
+{"anomaly": 1, "event_time": 19, "machine_id": "M023", "reason": "novel sensor signature, RUL~495h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 495.05305924749433, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 19, "machine_id": "M034", "reason": "novel sensor signature, RUL~499h", "risk_prob": 7.603082089081824e-05, "rul_est_h": 498.85731423555825, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 19, "machine_id": "M011", "reason": "novel sensor signature, RUL~484h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 484.37482433203985, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 19, "machine_id": "M025", "reason": "novel sensor signature, RUL~500h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 500.0, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 20, "machine_id": "M029", "reason": "novel sensor signature, RUL~493h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 493.3768154715169, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 43, "machine_id": "M011", "reason": "novel sensor signature, RUL~493h", "risk_prob": 8.84881242901043e-05, "rul_est_h": 492.74037646448363, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 43, "machine_id": "M023", "reason": "novel sensor signature, RUL~490h", "risk_prob": 9.002464275383639e-05, "rul_est_h": 490.1640409224881, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 43, "machine_id": "M034", "reason": "novel sensor signature, RUL~493h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 492.9503137473634, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 67, "machine_id": "M034", "reason": "novel sensor signature, RUL~491h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 491.3289140980445, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 67, "machine_id": "M011", "reason": "novel sensor signature, RUL~491h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 490.6369893812563, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 71, "machine_id": "M029", "reason": "novel sensor signature, RUL~486h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 485.70869901786875, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 85, "machine_id": "M023", "reason": "novel sensor signature, RUL~489h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 488.58782811335027, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 91, "machine_id": "M034", "reason": "novel sensor signature, RUL~499h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 498.97919845433313, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 92, "machine_id": "M011", "reason": "novel sensor signature, RUL~496h", "risk_prob": 8.02956745849888e-05, "rul_est_h": 496.43117960915873, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 108, "machine_id": "M029", "reason": "novel sensor signature, RUL~486h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 485.6513198141796, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 109, "machine_id": "M023", "reason": "novel sensor signature, RUL~487h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 487.0669290774882, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 115, "machine_id": "M034", "reason": "novel sensor signature, RUL~491h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 491.4237423057837, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 139, "machine_id": "M034", "reason": "novel sensor signature, RUL~492h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 492.02554999138215, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 156, "machine_id": "M011", "reason": "novel sensor signature, RUL~481h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 481.42739554717446, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 163, "machine_id": "M034", "reason": "novel sensor signature, RUL~493h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 492.77049471998026, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 188, "machine_id": "M034", "reason": "novel sensor signature, RUL~500h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 499.58293446176265, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 212, "machine_id": "M034", "reason": "novel sensor signature, RUL~487h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 487.33101973335124, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 258, "machine_id": "M034", "reason": "novel sensor signature, RUL~494h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 494.4837474707674, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 283, "machine_id": "M034", "reason": "novel sensor signature, RUL~497h", "risk_prob": 8.02956745849888e-05, "rul_est_h": 496.9404524301693, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 575, "machine_id": "M031", "reason": "novel sensor signature, RUL~199h", "risk_prob": 0.00010313625814170006, "rul_est_h": 199.4198596001812, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 576, "machine_id": "M016", "reason": "novel sensor signature, RUL~172h", "risk_prob": 9.2614984047567e-05, "rul_est_h": 172.48336982235122, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 595, "machine_id": "M034", "reason": "novel sensor signature, RUL~497h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 496.7454288353763, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 604, "machine_id": "M016", "reason": "novel sensor signature, RUL~123h", "risk_prob": 0.0001815473887521656, "rul_est_h": 123.25706358894679, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 628, "machine_id": "M016", "reason": "novel sensor signature, RUL~129h", "risk_prob": 0.00010182406263687608, "rul_est_h": 129.23686360505613, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 631, "machine_id": "M031", "reason": "novel sensor signature, RUL~158h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 157.88158562914327, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 641, "machine_id": "M026", "reason": "novel sensor signature, RUL~152h", "risk_prob": 9.705769767422013e-05, "rul_est_h": 151.87958057424203, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 652, "machine_id": "M016", "reason": "novel sensor signature, RUL~100h", "risk_prob": 0.0031478708699101583, "rul_est_h": 99.79638361719415, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 657, "machine_id": "M031", "reason": "novel sensor signature, RUL~121h", "risk_prob": 0.00015001300358143945, "rul_est_h": 120.7025659329816, "severity": "ANOMALY"}
+{"anomaly": 0, "event_time": 671, "machine_id": "M016", "reason": "P(fail<=72h)=0.41, RUL~98h", "risk_prob": 0.41322241477576405, "rul_est_h": 98.27320576659314, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 672, "machine_id": "M016", "reason": "P(fail<=72h)=0.54, RUL~98h", "risk_prob": 0.5379023305776579, "rul_est_h": 98.30085262783994, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 677, "machine_id": "M022", "reason": "novel sensor signature, RUL~211h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 210.7942669512862, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 678, "machine_id": "M026", "reason": "novel sensor signature, RUL~118h", "risk_prob": 0.00019467164208790717, "rul_est_h": 118.23269358963275, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 681, "machine_id": "M031", "reason": "novel sensor signature, RUL~87h", "risk_prob": 0.0012814487303223073, "rul_est_h": 86.93099499090054, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 696, "machine_id": "M016", "reason": "P(fail<=72h)=0.99, RUL~58h", "risk_prob": 0.9933969904879224, "rul_est_h": 58.139410291809, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 702, "machine_id": "M026", "reason": "novel sensor signature, RUL~85h", "risk_prob": 0.10434656566823655, "rul_est_h": 84.80683695243492, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 703, "machine_id": "M031", "reason": "P(fail<=72h)=0.25, RUL~93h", "risk_prob": 0.24518894501892244, "rul_est_h": 93.43278677732712, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 704, "machine_id": "M022", "reason": "novel sensor signature, RUL~171h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 171.35603418402988, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 705, "machine_id": "M026", "reason": "P(fail<=72h)=0.21, RUL~78h", "risk_prob": 0.2088771066909077, "rul_est_h": 77.76100762044696, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 705, "machine_id": "M031", "reason": "P(fail<=72h)=0.59, RUL~90h", "risk_prob": 0.5918440304669225, "rul_est_h": 90.44653714541577, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 720, "machine_id": "M016", "reason": "P(fail<=72h)=1.00, RUL~14h", "risk_prob": 0.9994582140686293, "rul_est_h": 13.956055407540989, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 725, "machine_id": "M026", "reason": "P(fail<=72h)=0.68, RUL~72h", "risk_prob": 0.6788616753855393, "rul_est_h": 72.1762809569953, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 728, "machine_id": "M022", "reason": "novel sensor signature, RUL~149h", "risk_prob": 9.403320979869559e-05, "rul_est_h": 148.69968560176486, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 729, "machine_id": "M026", "reason": "P(fail<=72h)=0.28, RUL~69h", "risk_prob": 0.28017785160494385, "rul_est_h": 69.12160998844936, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 729, "machine_id": "M031", "reason": "P(fail<=72h)=0.82, RUL~74h", "risk_prob": 0.8242551452767533, "rul_est_h": 73.9339078269794, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 744, "machine_id": "M016", "reason": "P(fail<=72h)=0.33, RUL~46h", "risk_prob": 0.3347187111480044, "rul_est_h": 45.708521605655534, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 745, "machine_id": "M016", "reason": "novel sensor signature, RUL~81h", "risk_prob": 0.013920818299413034, "rul_est_h": 80.6607756374962, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 748, "machine_id": "M010", "reason": "novel sensor signature, RUL~224h", "risk_prob": 9.635674372050788e-05, "rul_est_h": 223.64467742307514, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 749, "machine_id": "M026", "reason": "P(fail<=72h)=0.97, RUL~51h", "risk_prob": 0.9678927111710304, "rul_est_h": 50.78543243846033, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 752, "machine_id": "M022", "reason": "novel sensor signature, RUL~139h", "risk_prob": 7.75550273627958e-05, "rul_est_h": 138.61863926933611, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 753, "machine_id": "M031", "reason": "P(fail<=72h)=1.00, RUL~26h", "risk_prob": 0.9972197783854979, "rul_est_h": 26.216560417229, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 753, "machine_id": "M039", "reason": "novel sensor signature, RUL~168h", "risk_prob": 9.781001461135093e-05, "rul_est_h": 168.29578685874242, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 773, "machine_id": "M026", "reason": "P(fail<=72h)=0.98, RUL~36h", "risk_prob": 0.9844860685696518, "rul_est_h": 35.72716697296767, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 773, "machine_id": "M001", "reason": "novel sensor signature, RUL~140h", "risk_prob": 0.0001291756430344068, "rul_est_h": 139.8458634866063, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 776, "machine_id": "M022", "reason": "novel sensor signature, RUL~92h", "risk_prob": 0.02914725221525424, "rul_est_h": 91.99256259018836, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 776, "machine_id": "M031", "reason": "P(fail<=72h)=0.31, RUL~45h", "risk_prob": 0.3133775750587101, "rul_est_h": 45.196674858722695, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 777, "machine_id": "M031", "reason": "novel sensor signature, RUL~94h", "risk_prob": 0.00011322917861004831, "rul_est_h": 94.2082412989226, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 779, "machine_id": "M010", "reason": "novel sensor signature, RUL~150h", "risk_prob": 0.00010250190678451434, "rul_est_h": 150.21429376594364, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 780, "machine_id": "M039", "reason": "novel sensor signature, RUL~153h", "risk_prob": 9.123889439244721e-05, "rul_est_h": 152.54336602710268, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 781, "machine_id": "M022", "reason": "P(fail<=72h)=1.00, RUL~110h", "risk_prob": 0.999973142601609, "rul_est_h": 110.39710091216169, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 788, "machine_id": "M022", "reason": "P(fail<=72h)=0.38, RUL~91h", "risk_prob": 0.37578389400911016, "rul_est_h": 91.40674156395269, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 796, "machine_id": "M019", "reason": "novel sensor signature, RUL~236h", "risk_prob": 9.123889439244721e-05, "rul_est_h": 235.7242108446888, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 797, "machine_id": "M026", "reason": "P(fail<=72h)=1.00, RUL~13h", "risk_prob": 0.9988575568405909, "rul_est_h": 12.88104169786958, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 799, "machine_id": "M009", "reason": "novel sensor signature, RUL~199h", "risk_prob": 0.00010015422663387285, "rul_est_h": 198.52478899058724, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 800, "machine_id": "M001", "reason": "novel sensor signature, RUL~115h", "risk_prob": 0.00018977482379574029, "rul_est_h": 115.1249968661357, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 803, "machine_id": "M010", "reason": "novel sensor signature, RUL~105h", "risk_prob": 0.00019573876625190103, "rul_est_h": 105.31397488705554, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 805, "machine_id": "M022", "reason": "P(fail<=72h)=0.96, RUL~58h", "risk_prob": 0.9568926849523057, "rul_est_h": 58.46447218182263, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 807, "machine_id": "M026", "reason": "novel sensor signature, RUL~57h", "risk_prob": 0.0798772784892791, "rul_est_h": 57.206003436546794, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 816, "machine_id": "M039", "reason": "novel sensor signature, RUL~116h", "risk_prob": 0.00016406126698369707, "rul_est_h": 115.77851503204161, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 820, "machine_id": "M019", "reason": "novel sensor signature, RUL~185h", "risk_prob": 9.939289329080501e-05, "rul_est_h": 184.74501989834653, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 825, "machine_id": "M001", "reason": "novel sensor signature, RUL~99h", "risk_prob": 0.027798958437416664, "rul_est_h": 98.5525964520187, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 827, "machine_id": "M010", "reason": "novel sensor signature, RUL~104h", "risk_prob": 0.006608127240170143, "rul_est_h": 104.49634430549003, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 828, "machine_id": "M009", "reason": "novel sensor signature, RUL~167h", "risk_prob": 8.61011753466715e-05, "rul_est_h": 166.73298242858183, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 829, "machine_id": "M022", "reason": "P(fail<=72h)=1.00, RUL~30h", "risk_prob": 0.9985822365516163, "rul_est_h": 30.008675283014945, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 840, "machine_id": "M001", "reason": "P(fail<=72h)=0.21, RUL~90h", "risk_prob": 0.2083475491464321, "rul_est_h": 89.51045727128508, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 840, "machine_id": "M039", "reason": "novel sensor signature, RUL~119h", "risk_prob": 0.0006271456224575717, "rul_est_h": 118.87372761129873, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 841, "machine_id": "M010", "reason": "P(fail<=72h)=0.36, RUL~77h", "risk_prob": 0.3618785390260698, "rul_est_h": 77.07908985069264, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 846, "machine_id": "M010", "reason": "P(fail<=72h)=0.80, RUL~71h", "risk_prob": 0.8027776828592009, "rul_est_h": 71.36761225612044, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 848, "machine_id": "M001", "reason": "P(fail<=72h)=0.55, RUL~69h", "risk_prob": 0.5450776971866806, "rul_est_h": 69.20836078489977, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 848, "machine_id": "M019", "reason": "novel sensor signature, RUL~172h", "risk_prob": 8.787439187547324e-05, "rul_est_h": 172.30194761605665, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 849, "machine_id": "M001", "reason": "novel sensor signature, RUL~76h", "risk_prob": 0.17092115190070228, "rul_est_h": 76.29892737021287, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 849, "machine_id": "M026", "reason": "novel sensor signature, RUL~480h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 479.613003886818, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 852, "machine_id": "M032", "reason": "novel sensor signature, RUL~268h", "risk_prob": 9.123889439244721e-05, "rul_est_h": 268.2338566493111, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 853, "machine_id": "M022", "reason": "P(fail<=72h)=1.00, RUL~2h", "risk_prob": 0.9977360607597386, "rul_est_h": 2.0452230297722584, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 854, "machine_id": "M039", "reason": "P(fail<=72h)=0.45, RUL~88h", "risk_prob": 0.4535979458566057, "rul_est_h": 88.49297844402814, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 854, "machine_id": "M022", "reason": "novel sensor signature, RUL~55h", "risk_prob": 0.03734647975254742, "rul_est_h": 54.63251843732993, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 857, "machine_id": "M039", "reason": "P(fail<=72h)=0.54, RUL~82h", "risk_prob": 0.5404948149787221, "rul_est_h": 82.05720272873252, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 865, "machine_id": "M009", "reason": "novel sensor signature, RUL~147h", "risk_prob": 0.0001062664496744594, "rul_est_h": 147.08029627313698, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 870, "machine_id": "M010", "reason": "P(fail<=72h)=1.00, RUL~47h", "risk_prob": 0.9958343516429062, "rul_est_h": 46.929727635553654, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 872, "machine_id": "M001", "reason": "P(fail<=72h)=0.99, RUL~22h", "risk_prob": 0.9857211218219484, "rul_est_h": 22.250680969777513, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 872, "machine_id": "M019", "reason": "novel sensor signature, RUL~95h", "risk_prob": 0.008960338349076228, "rul_est_h": 95.46027971226492, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 874, "machine_id": "M012", "reason": "novel sensor signature, RUL~194h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 194.2739421826291, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 881, "machine_id": "M039", "reason": "P(fail<=72h)=0.99, RUL~55h", "risk_prob": 0.9949194401232822, "rul_est_h": 54.75054169423125, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 889, "machine_id": "M009", "reason": "novel sensor signature, RUL~115h", "risk_prob": 0.0001855063762351369, "rul_est_h": 114.99145953542374, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 894, "machine_id": "M010", "reason": "P(fail<=72h)=1.00, RUL~24h", "risk_prob": 0.9959827840072993, "rul_est_h": 24.259196069248187, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 896, "machine_id": "M019", "reason": "novel sensor signature, RUL~82h", "risk_prob": 0.031019792942386798, "rul_est_h": 82.02554056778277, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 896, "machine_id": "M001", "reason": "P(fail<=72h)=1.00, RUL~18h", "risk_prob": 0.9995764717756865, "rul_est_h": 18.151261085526727, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 898, "machine_id": "M012", "reason": "novel sensor signature, RUL~184h", "risk_prob": 9.366175924406619e-05, "rul_est_h": 183.76618550357725, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 899, "machine_id": "M001", "reason": "novel sensor signature, RUL~48h", "risk_prob": 0.023642771139157578, "rul_est_h": 48.050907837952245, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 903, "machine_id": "M022", "reason": "novel sensor signature, RUL~480h", "risk_prob": 9.366175924406619e-05, "rul_est_h": 480.01604948262843, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 904, "machine_id": "M019", "reason": "P(fail<=72h)=0.22, RUL~74h", "risk_prob": 0.22133704933026951, "rul_est_h": 74.36872825275569, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 905, "machine_id": "M039", "reason": "P(fail<=72h)=1.00, RUL~30h", "risk_prob": 0.9978369435128958, "rul_est_h": 29.929622321559382, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 908, "machine_id": "M019", "reason": "P(fail<=72h)=0.53, RUL~78h", "risk_prob": 0.5331820441818962, "rul_est_h": 78.36705651099174, "severity": "CRITICAL"}
+{"anomaly": 0, "event_time": 912, "machine_id": "M009", "reason": "P(fail<=72h)=0.26, RUL~80h", "risk_prob": 0.2593207264988425, "rul_est_h": 79.74861309989073, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 914, "machine_id": "M009", "reason": "novel sensor signature, RUL~79h", "risk_prob": 0.12156668234573587, "rul_est_h": 78.55373122309756, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 915, "machine_id": "M009", "reason": "P(fail<=72h)=0.74, RUL~71h", "risk_prob": 0.7418434567479859, "rul_est_h": 71.15743581939341, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 918, "machine_id": "M010", "reason": "P(fail<=72h)=0.94, RUL~0h", "risk_prob": 0.9412830318817537, "rul_est_h": 0.0, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 919, "machine_id": "M010", "reason": "novel sensor signature, RUL~56h", "risk_prob": 0.03732581870391097, "rul_est_h": 55.73237121437357, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 920, "machine_id": "M032", "reason": "novel sensor signature, RUL~213h", "risk_prob": 9.809442739561104e-05, "rul_est_h": 212.54634882542206, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 922, "machine_id": "M012", "reason": "novel sensor signature, RUL~156h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 155.71791546686273, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 925, "machine_id": "M039", "reason": "novel sensor signature, RUL~61h", "risk_prob": 0.12723539870499018, "rul_est_h": 61.05341569059935, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 932, "machine_id": "M019", "reason": "P(fail<=72h)=0.99, RUL~41h", "risk_prob": 0.9876386749796128, "rul_est_h": 41.2681683907189, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 934, "machine_id": "M003", "reason": "novel sensor signature, RUL~191h", "risk_prob": 7.821853976985617e-05, "rul_est_h": 191.10086670315658, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 939, "machine_id": "M009", "reason": "P(fail<=72h)=1.00, RUL~51h", "risk_prob": 0.9957522464877719, "rul_est_h": 50.96284186063255, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 944, "machine_id": "M032", "reason": "novel sensor signature, RUL~160h", "risk_prob": 7.53858650713214e-05, "rul_est_h": 159.80578905565568, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 946, "machine_id": "M012", "reason": "novel sensor signature, RUL~166h", "risk_prob": 0.0001193983168262247, "rul_est_h": 165.6853796076173, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 956, "machine_id": "M019", "reason": "P(fail<=72h)=1.00, RUL~21h", "risk_prob": 0.9986971178414994, "rul_est_h": 21.15581176131893, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 963, "machine_id": "M009", "reason": "P(fail<=72h)=1.00, RUL~24h", "risk_prob": 0.9977328833754158, "rul_est_h": 24.445505594968793, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 968, "machine_id": "M032", "reason": "novel sensor signature, RUL~131h", "risk_prob": 0.00013896561973382725, "rul_est_h": 131.15238063289047, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 969, "machine_id": "M003", "reason": "novel sensor signature, RUL~152h", "risk_prob": 0.00013398948892934657, "rul_est_h": 151.62490050916637, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 970, "machine_id": "M012", "reason": "novel sensor signature, RUL~93h", "risk_prob": 0.128946862412397, "rul_est_h": 92.70604932397642, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 976, "machine_id": "M007", "reason": "novel sensor signature, RUL~264h", "risk_prob": 0.00010396132665736459, "rul_est_h": 263.7821913415843, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 980, "machine_id": "M019", "reason": "P(fail<=72h)=1.00, RUL~27h", "risk_prob": 0.996983814979305, "rul_est_h": 26.888455734059978, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 987, "machine_id": "M009", "reason": "P(fail<=72h)=1.00, RUL~8h", "risk_prob": 0.9980746942872372, "rul_est_h": 7.7722493594826405, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 988, "machine_id": "M036", "reason": "novel sensor signature, RUL~219h", "risk_prob": 0.00015773481528675494, "rul_est_h": 219.1387946863701, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 988, "machine_id": "M019", "reason": "novel sensor signature, RUL~82h", "risk_prob": 0.00020153807916231377, "rul_est_h": 81.75940884595194, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 990, "machine_id": "M009", "reason": "novel sensor signature, RUL~51h", "risk_prob": 0.05120665888969985, "rul_est_h": 50.70126902692493, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 992, "machine_id": "M012", "reason": "P(fail<=72h)=0.26, RUL~89h", "risk_prob": 0.26360121055432717, "rul_est_h": 89.04504884723869, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 992, "machine_id": "M032", "reason": "novel sensor signature, RUL~116h", "risk_prob": 0.0009168498614752134, "rul_est_h": 116.06527773432623, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 993, "machine_id": "M003", "reason": "novel sensor signature, RUL~144h", "risk_prob": 8.244946678445088e-05, "rul_est_h": 144.24812159266264, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 994, "machine_id": "M012", "reason": "novel sensor signature, RUL~89h", "risk_prob": 0.18213795223566484, "rul_est_h": 89.42476185313278, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1006, "machine_id": "M007", "reason": "novel sensor signature, RUL~250h", "risk_prob": 8.969073963220547e-05, "rul_est_h": 249.97411873287362, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1006, "machine_id": "M012", "reason": "P(fail<=72h)=0.84, RUL~70h", "risk_prob": 0.8368539723263156, "rul_est_h": 69.98014384126478, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1014, "machine_id": "M019", "reason": "novel sensor signature, RUL~484h", "risk_prob": 8.02956745849888e-05, "rul_est_h": 484.3574213881295, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1016, "machine_id": "M032", "reason": "novel sensor signature, RUL~102h", "risk_prob": 0.0006009354575430469, "rul_est_h": 102.16764336242034, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1017, "machine_id": "M036", "reason": "novel sensor signature, RUL~219h", "risk_prob": 9.403320979869559e-05, "rul_est_h": 218.81868175104876, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1017, "machine_id": "M038", "reason": "novel sensor signature, RUL~235h", "risk_prob": 9.661299949671584e-05, "rul_est_h": 234.80007651004516, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1017, "machine_id": "M003", "reason": "novel sensor signature, RUL~109h", "risk_prob": 0.0007852055276079136, "rul_est_h": 109.4458833754084, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1018, "machine_id": "M012", "reason": "P(fail<=72h)=0.27, RUL~92h", "risk_prob": 0.2667413379113013, "rul_est_h": 92.28730754870253, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1021, "machine_id": "M012", "reason": "novel sensor signature, RUL~89h", "risk_prob": 0.07656318834329408, "rul_est_h": 88.9392973066828, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1029, "machine_id": "M004", "reason": "novel sensor signature, RUL~251h", "risk_prob": 9.168360696356659e-05, "rul_est_h": 251.1416172552781, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1030, "machine_id": "M012", "reason": "P(fail<=72h)=0.63, RUL~70h", "risk_prob": 0.6275389989743263, "rul_est_h": 70.15886557599468, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1033, "machine_id": "M007", "reason": "novel sensor signature, RUL~179h", "risk_prob": 8.561008668972781e-05, "rul_est_h": 178.7200632232841, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1036, "machine_id": "M003", "reason": "P(fail<=72h)=0.24, RUL~81h", "risk_prob": 0.2369484267189803, "rul_est_h": 81.40071764341027, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1037, "machine_id": "M032", "reason": "P(fail<=72h)=0.33, RUL~74h", "risk_prob": 0.32531777498875775, "rul_est_h": 73.93016445762669, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1038, "machine_id": "M017", "reason": "novel sensor signature, RUL~191h", "risk_prob": 8.168326397695e-05, "rul_est_h": 191.12373651660658, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1041, "machine_id": "M036", "reason": "novel sensor signature, RUL~199h", "risk_prob": 7.034330387164401e-05, "rul_est_h": 198.61252075319135, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1041, "machine_id": "M003", "reason": "novel sensor signature, RUL~99h", "risk_prob": 0.005409304447618326, "rul_est_h": 98.98354174510332, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1044, "machine_id": "M032", "reason": "P(fail<=72h)=0.60, RUL~77h", "risk_prob": 0.6011606746227018, "rul_est_h": 76.89627039332562, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1054, "machine_id": "M012", "reason": "P(fail<=72h)=0.99, RUL~34h", "risk_prob": 0.9948315483674922, "rul_est_h": 34.01194261341105, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1057, "machine_id": "M028", "reason": "novel sensor signature, RUL~307h", "risk_prob": 9.635674372050788e-05, "rul_est_h": 307.32583825399075, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1060, "machine_id": "M007", "reason": "novel sensor signature, RUL~154h", "risk_prob": 0.00011108680283461151, "rul_est_h": 154.42903043523248, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1060, "machine_id": "M003", "reason": "P(fail<=72h)=0.49, RUL~80h", "risk_prob": 0.49192993022289055, "rul_est_h": 79.93020185027855, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1062, "machine_id": "M003", "reason": "P(fail<=72h)=0.53, RUL~82h", "risk_prob": 0.5261660982559401, "rul_est_h": 82.29757441876147, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1062, "machine_id": "M038", "reason": "novel sensor signature, RUL~144h", "risk_prob": 0.00010313625814170006, "rul_est_h": 144.2235443964612, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1064, "machine_id": "M017", "reason": "novel sensor signature, RUL~164h", "risk_prob": 9.588253682663412e-05, "rul_est_h": 164.14224561091788, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1065, "machine_id": "M036", "reason": "novel sensor signature, RUL~154h", "risk_prob": 0.0003543039309913745, "rul_est_h": 154.2882455185407, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1067, "machine_id": "M004", "reason": "novel sensor signature, RUL~182h", "risk_prob": 0.00010136510177850178, "rul_est_h": 181.67924131478625, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1068, "machine_id": "M032", "reason": "P(fail<=72h)=0.98, RUL~41h", "risk_prob": 0.983684244651213, "rul_est_h": 40.518954686571256, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1078, "machine_id": "M012", "reason": "P(fail<=72h)=1.00, RUL~6h", "risk_prob": 0.9989490308544907, "rul_est_h": 6.481761516969169, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1084, "machine_id": "M007", "reason": "novel sensor signature, RUL~151h", "risk_prob": 0.0001483984375394787, "rul_est_h": 151.38356260983673, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1086, "machine_id": "M003", "reason": "P(fail<=72h)=1.00, RUL~29h", "risk_prob": 0.9957697540015233, "rul_est_h": 28.92755625186629, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1087, "machine_id": "M038", "reason": "novel sensor signature, RUL~193h", "risk_prob": 0.0001049522064698768, "rul_est_h": 192.90250504666102, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1088, "machine_id": "M017", "reason": "novel sensor signature, RUL~163h", "risk_prob": 9.093086159493483e-05, "rul_est_h": 162.91807026296402, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1089, "machine_id": "M012", "reason": "novel sensor signature, RUL~68h", "risk_prob": 0.0007467704749077608, "rul_est_h": 67.69929357413123, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1089, "machine_id": "M036", "reason": "novel sensor signature, RUL~119h", "risk_prob": 0.0007190642204451919, "rul_est_h": 119.02576545879336, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1091, "machine_id": "M004", "reason": "novel sensor signature, RUL~184h", "risk_prob": 0.0003063205334419512, "rul_est_h": 184.43662835778574, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1093, "machine_id": "M032", "reason": "P(fail<=72h)=0.99, RUL~39h", "risk_prob": 0.9945628066191483, "rul_est_h": 38.86731720484856, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1096, "machine_id": "M028", "reason": "novel sensor signature, RUL~272h", "risk_prob": 9.286128973160782e-05, "rul_est_h": 272.39931212201685, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1106, "machine_id": "M024", "reason": "novel sensor signature, RUL~249h", "risk_prob": 8.870038983394548e-05, "rul_est_h": 248.63031212899315, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1108, "machine_id": "M007", "reason": "novel sensor signature, RUL~100h", "risk_prob": 0.000604627349892587, "rul_est_h": 100.40671387884562, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1108, "machine_id": "M033", "reason": "novel sensor signature, RUL~305h", "risk_prob": 8.738245882235916e-05, "rul_est_h": 304.60057698478204, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1110, "machine_id": "M003", "reason": "P(fail<=72h)=1.00, RUL~29h", "risk_prob": 0.9990250513388768, "rul_est_h": 28.71595226622266, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1111, "machine_id": "M038", "reason": "novel sensor signature, RUL~147h", "risk_prob": 0.000256285356361853, "rul_est_h": 147.2060714166098, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1113, "machine_id": "M017", "reason": "novel sensor signature, RUL~135h", "risk_prob": 0.00030994161391610707, "rul_est_h": 134.74150769562172, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1113, "machine_id": "M036", "reason": "novel sensor signature, RUL~100h", "risk_prob": 0.0009419766814409434, "rul_est_h": 100.31123433424948, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1115, "machine_id": "M004", "reason": "novel sensor signature, RUL~152h", "risk_prob": 0.0014816114945281234, "rul_est_h": 152.32979416282723, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1116, "machine_id": "M032", "reason": "novel sensor signature, RUL~52h", "risk_prob": 0.024873877077118252, "rul_est_h": 51.702761294041316, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1120, "machine_id": "M028", "reason": "novel sensor signature, RUL~273h", "risk_prob": 9.159234820058917e-05, "rul_est_h": 272.529964535436, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1126, "machine_id": "M000", "reason": "novel sensor signature, RUL~258h", "risk_prob": 0.00010570431053922978, "rul_est_h": 257.62756028840033, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1128, "machine_id": "M036", "reason": "P(fail<=72h)=0.30, RUL~61h", "risk_prob": 0.3001257819724764, "rul_est_h": 60.73088582476431, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1130, "machine_id": "M024", "reason": "novel sensor signature, RUL~195h", "risk_prob": 0.00010489249829532693, "rul_est_h": 194.65946477907622, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1130, "machine_id": "M036", "reason": "P(fail<=72h)=0.52, RUL~63h", "risk_prob": 0.5158708236035361, "rul_est_h": 62.988166282594925, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1132, "machine_id": "M007", "reason": "novel sensor signature, RUL~97h", "risk_prob": 0.046156203103163096, "rul_est_h": 97.40698410923636, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1133, "machine_id": "M003", "reason": "novel sensor signature, RUL~56h", "risk_prob": 0.0003136962459292126, "rul_est_h": 56.02769399577233, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1133, "machine_id": "M004", "reason": "P(fail<=72h)=0.23, RUL~86h", "risk_prob": 0.23215832279855728, "rul_est_h": 85.6438022583218, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1135, "machine_id": "M038", "reason": "novel sensor signature, RUL~124h", "risk_prob": 0.0005539115172989011, "rul_est_h": 123.80463325402285, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1137, "machine_id": "M017", "reason": "novel sensor signature, RUL~112h", "risk_prob": 0.0023672881456140117, "rul_est_h": 111.72062858247368, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1140, "machine_id": "M004", "reason": "novel sensor signature, RUL~82h", "risk_prob": 0.139517091961672, "rul_est_h": 81.8315105085872, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1141, "machine_id": "M032", "reason": "novel sensor signature, RUL~437h", "risk_prob": 8.369300301349398e-05, "rul_est_h": 437.181328812278, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1143, "machine_id": "M007", "reason": "P(fail<=72h)=0.24, RUL~84h", "risk_prob": 0.24376301160132238, "rul_est_h": 83.89057846589704, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1145, "machine_id": "M028", "reason": "novel sensor signature, RUL~198h", "risk_prob": 9.093086159493483e-05, "rul_est_h": 198.3026107455355, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1148, "machine_id": "M007", "reason": "P(fail<=72h)=0.59, RUL~65h", "risk_prob": 0.59329842755254, "rul_est_h": 65.06893773649763, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1148, "machine_id": "M017", "reason": "P(fail<=72h)=0.24, RUL~90h", "risk_prob": 0.23667593785507554, "rul_est_h": 89.56910193511992, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1150, "machine_id": "M000", "reason": "novel sensor signature, RUL~224h", "risk_prob": 9.866612864539934e-05, "rul_est_h": 224.09225113956174, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1154, "machine_id": "M036", "reason": "P(fail<=72h)=0.98, RUL~59h", "risk_prob": 0.981665715936739, "rul_est_h": 59.45522747819024, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1155, "machine_id": "M017", "reason": "P(fail<=72h)=0.58, RUL~70h", "risk_prob": 0.5817223845912514, "rul_est_h": 69.82807269885383, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1156, "machine_id": "M024", "reason": "novel sensor signature, RUL~169h", "risk_prob": 9.541081803922408e-05, "rul_est_h": 169.40601921193158, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1160, "machine_id": "M004", "reason": "P(fail<=72h)=0.54, RUL~73h", "risk_prob": 0.5383051538002941, "rul_est_h": 72.5089899920914, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1160, "machine_id": "M038", "reason": "novel sensor signature, RUL~98h", "risk_prob": 0.005015590534242567, "rul_est_h": 98.12742350129574, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1166, "machine_id": "M032", "reason": "novel sensor signature, RUL~483h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 482.5002970728933, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1169, "machine_id": "M028", "reason": "novel sensor signature, RUL~189h", "risk_prob": 0.0002360320554417515, "rul_est_h": 188.73759766725502, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1170, "machine_id": "M007", "reason": "P(fail<=72h)=0.38, RUL~84h", "risk_prob": 0.3836753540707735, "rul_est_h": 83.5453234500082, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1173, "machine_id": "M007", "reason": "P(fail<=72h)=0.69, RUL~71h", "risk_prob": 0.6940400300319018, "rul_est_h": 71.28084169779564, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1175, "machine_id": "M000", "reason": "novel sensor signature, RUL~176h", "risk_prob": 0.0001086501226499001, "rul_est_h": 175.76124302569497, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1178, "machine_id": "M036", "reason": "P(fail<=72h)=0.99, RUL~37h", "risk_prob": 0.990898488415833, "rul_est_h": 36.69314054264261, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1179, "machine_id": "M017", "reason": "P(fail<=72h)=0.96, RUL~42h", "risk_prob": 0.9636672061531185, "rul_est_h": 42.04393676697487, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1180, "machine_id": "M024", "reason": "novel sensor signature, RUL~205h", "risk_prob": 0.00036081747850001504, "rul_est_h": 205.15549569277198, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1184, "machine_id": "M038", "reason": "novel sensor signature, RUL~92h", "risk_prob": 0.12213077145997052, "rul_est_h": 92.35195349607447, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1184, "machine_id": "M004", "reason": "P(fail<=72h)=1.00, RUL~43h", "risk_prob": 0.9952995165509769, "rul_est_h": 43.191745872225, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1186, "machine_id": "M033", "reason": "novel sensor signature, RUL~184h", "risk_prob": 0.00011955654854258751, "rul_est_h": 184.11128344358502, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1193, "machine_id": "M028", "reason": "novel sensor signature, RUL~163h", "risk_prob": 0.00031375260741866256, "rul_est_h": 162.77536492159635, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1197, "machine_id": "M007", "reason": "P(fail<=72h)=0.96, RUL~44h", "risk_prob": 0.9621862766168713, "rul_est_h": 43.9961002774661, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1200, "machine_id": "M000", "reason": "novel sensor signature, RUL~163h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 162.60823312059838, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1202, "machine_id": "M036", "reason": "P(fail<=72h)=1.00, RUL~9h", "risk_prob": 0.9988489079554325, "rul_est_h": 9.019766617105056, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1202, "machine_id": "M038", "reason": "P(fail<=72h)=0.36, RUL~65h", "risk_prob": 0.35795297066487264, "rul_est_h": 65.40223717666794, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1203, "machine_id": "M017", "reason": "P(fail<=72h)=1.00, RUL~15h", "risk_prob": 0.9962051938873303, "rul_est_h": 14.527770870690023, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1204, "machine_id": "M024", "reason": "novel sensor signature, RUL~153h", "risk_prob": 0.00010324888556211088, "rul_est_h": 153.0095177538575, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1205, "machine_id": "M038", "reason": "P(fail<=72h)=0.50, RUL~64h", "risk_prob": 0.5014369601999564, "rul_est_h": 64.03048005056189, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1207, "machine_id": "M005", "reason": "novel sensor signature, RUL~358h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 358.4342255300326, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1208, "machine_id": "M004", "reason": "P(fail<=72h)=1.00, RUL~12h", "risk_prob": 0.9968276316567493, "rul_est_h": 11.936432112474177, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1210, "machine_id": "M036", "reason": "novel sensor signature, RUL~68h", "risk_prob": 0.0015072252792594774, "rul_est_h": 67.89298246412906, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1210, "machine_id": "M033", "reason": "novel sensor signature, RUL~160h", "risk_prob": 0.00010886264256820354, "rul_est_h": 160.14374922392415, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1217, "machine_id": "M028", "reason": "novel sensor signature, RUL~116h", "risk_prob": 0.0030423625801516284, "rul_est_h": 116.02043230053671, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1221, "machine_id": "M007", "reason": "P(fail<=72h)=0.99, RUL~17h", "risk_prob": 0.9894827084862976, "rul_est_h": 17.423987989089685, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1224, "machine_id": "M000", "reason": "novel sensor signature, RUL~167h", "risk_prob": 0.00023086641210984588, "rul_est_h": 167.21048605078937, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1227, "machine_id": "M017", "reason": "P(fail<=72h)=1.00, RUL~11h", "risk_prob": 0.9992377004108963, "rul_est_h": 11.295604082536249, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1228, "machine_id": "M024", "reason": "novel sensor signature, RUL~117h", "risk_prob": 0.0005171204334756041, "rul_est_h": 116.88104537037762, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1229, "machine_id": "M017", "reason": "novel sensor signature, RUL~72h", "risk_prob": 0.005440772095301097, "rul_est_h": 72.11909310797097, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1229, "machine_id": "M038", "reason": "P(fail<=72h)=0.99, RUL~31h", "risk_prob": 0.9944139174455003, "rul_est_h": 31.125720757835197, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1230, "machine_id": "M007", "reason": "novel sensor signature, RUL~117h", "risk_prob": 0.00025340832917049836, "rul_est_h": 117.0603145109888, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1231, "machine_id": "M005", "reason": "novel sensor signature, RUL~260h", "risk_prob": 9.093086159493483e-05, "rul_est_h": 260.22856978742897, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1232, "machine_id": "M004", "reason": "novel sensor signature, RUL~94h", "risk_prob": 0.000337925677027876, "rul_est_h": 93.79903847920284, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1235, "machine_id": "M036", "reason": "novel sensor signature, RUL~457h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 456.79742861672565, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1236, "machine_id": "M033", "reason": "novel sensor signature, RUL~134h", "risk_prob": 0.00011654192871007874, "rul_est_h": 134.400925785868, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1242, "machine_id": "M035", "reason": "novel sensor signature, RUL~466h", "risk_prob": 9.201444412109707e-05, "rul_est_h": 465.6369521889157, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1243, "machine_id": "M028", "reason": "novel sensor signature, RUL~112h", "risk_prob": 0.0002653560249759661, "rul_est_h": 111.93480008522575, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1248, "machine_id": "M000", "reason": "novel sensor signature, RUL~128h", "risk_prob": 0.00032370465557221426, "rul_est_h": 127.88272934241778, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1252, "machine_id": "M024", "reason": "novel sensor signature, RUL~120h", "risk_prob": 0.0006046980202076795, "rul_est_h": 119.62894519756803, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1253, "machine_id": "M038", "reason": "P(fail<=72h)=0.99, RUL~16h", "risk_prob": 0.9936300618839901, "rul_est_h": 16.43666599884264, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1254, "machine_id": "M017", "reason": "novel sensor signature, RUL~486h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 486.3243640221089, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1257, "machine_id": "M004", "reason": "novel sensor signature, RUL~482h", "risk_prob": 8.02956745849888e-05, "rul_est_h": 482.22673143861044, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1259, "machine_id": "M005", "reason": "novel sensor signature, RUL~235h", "risk_prob": 0.00013358937357719062, "rul_est_h": 235.43253929813343, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1260, "machine_id": "M033", "reason": "novel sensor signature, RUL~123h", "risk_prob": 0.00023073987072753382, "rul_est_h": 122.74202109448252, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1262, "machine_id": "M038", "reason": "novel sensor signature, RUL~103h", "risk_prob": 0.0002701301414407028, "rul_est_h": 102.8730776724142, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1263, "machine_id": "M007", "reason": "novel sensor signature, RUL~488h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 487.80124458098936, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1267, "machine_id": "M028", "reason": "novel sensor signature, RUL~99h", "risk_prob": 0.0022819919609416866, "rul_est_h": 99.47629545042025, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1268, "machine_id": "M024", "reason": "P(fail<=72h)=0.22, RUL~82h", "risk_prob": 0.21667787398080618, "rul_est_h": 81.67489779518768, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1272, "machine_id": "M000", "reason": "novel sensor signature, RUL~90h", "risk_prob": 0.0019344729663159108, "rul_est_h": 90.14207202437763, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1277, "machine_id": "M033", "reason": "P(fail<=72h)=0.22, RUL~86h", "risk_prob": 0.22088735920284552, "rul_est_h": 85.63648670618343, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1281, "machine_id": "M017", "reason": "novel sensor signature, RUL~479h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 478.60894324297374, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1284, "machine_id": "M005", "reason": "novel sensor signature, RUL~261h", "risk_prob": 9.673888120475196e-05, "rul_est_h": 260.7840426480971, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1285, "machine_id": "M024", "reason": "novel sensor signature, RUL~71h", "risk_prob": 0.15853039965046162, "rul_est_h": 71.15213710248449, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1285, "machine_id": "M000", "reason": "P(fail<=72h)=0.37, RUL~55h", "risk_prob": 0.372947403292835, "rul_est_h": 55.09201581076677, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1285, "machine_id": "M004", "reason": "novel sensor signature, RUL~483h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 483.2239619946864, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1285, "machine_id": "M033", "reason": "P(fail<=72h)=0.58, RUL~77h", "risk_prob": 0.5825816557220068, "rul_est_h": 76.55385602007291, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1285, "machine_id": "M028", "reason": "P(fail<=72h)=0.25, RUL~75h", "risk_prob": 0.2533281658264933, "rul_est_h": 75.03927684532913, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1286, "machine_id": "M038", "reason": "novel sensor signature, RUL~479h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 478.9987716616724, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1290, "machine_id": "M035", "reason": "novel sensor signature, RUL~386h", "risk_prob": 8.137871266103972e-05, "rul_est_h": 385.9047739679725, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1290, "machine_id": "M000", "reason": "P(fail<=72h)=0.60, RUL~63h", "risk_prob": 0.5975632613606456, "rul_est_h": 63.23488722442701, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1291, "machine_id": "M028", "reason": "novel sensor signature, RUL~95h", "risk_prob": 0.03167217848590479, "rul_est_h": 95.46279251359924, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1292, "machine_id": "M024", "reason": "P(fail<=72h)=0.27, RUL~72h", "risk_prob": 0.26996870392330996, "rul_est_h": 71.58377293835296, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1295, "machine_id": "M024", "reason": "P(fail<=72h)=0.78, RUL~69h", "risk_prob": 0.7823408707586187, "rul_est_h": 69.0545798302024, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1296, "machine_id": "M000", "reason": "novel sensor signature, RUL~67h", "risk_prob": 0.19436170127618121, "rul_est_h": 66.85789595835513, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1304, "machine_id": "M028", "reason": "P(fail<=72h)=0.54, RUL~94h", "risk_prob": 0.5356640627776609, "rul_est_h": 94.27415782386015, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1306, "machine_id": "M015", "reason": "novel sensor signature, RUL~184h", "risk_prob": 9.673888120475196e-05, "rul_est_h": 184.19673604455107, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1308, "machine_id": "M005", "reason": "novel sensor signature, RUL~253h", "risk_prob": 0.00010160385743810792, "rul_est_h": 252.86972792727403, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1309, "machine_id": "M033", "reason": "P(fail<=72h)=0.90, RUL~57h", "risk_prob": 0.8970561007959642, "rul_est_h": 56.53805874953502, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1309, "machine_id": "M028", "reason": "P(fail<=72h)=0.27, RUL~100h", "risk_prob": 0.2665206407332281, "rul_est_h": 100.00644780766754, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1313, "machine_id": "M038", "reason": "novel sensor signature, RUL~486h", "risk_prob": 8.02956745849888e-05, "rul_est_h": 485.7613807668607, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1314, "machine_id": "M000", "reason": "P(fail<=72h)=1.00, RUL~43h", "risk_prob": 0.9965070700720051, "rul_est_h": 43.250512055352, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1317, "machine_id": "M030", "reason": "novel sensor signature, RUL~381h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 380.53683376212797, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1319, "machine_id": "M024", "reason": "P(fail<=72h)=0.97, RUL~42h", "risk_prob": 0.971909497383371, "rul_est_h": 41.90810765292247, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1326, "machine_id": "M027", "reason": "novel sensor signature, RUL~231h", "risk_prob": 9.093086159493483e-05, "rul_est_h": 231.11536691797141, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1328, "machine_id": "M028", "reason": "P(fail<=72h)=0.99, RUL~26h", "risk_prob": 0.9949362628521613, "rul_est_h": 26.302717171147588, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1333, "machine_id": "M033", "reason": "P(fail<=72h)=0.99, RUL~44h", "risk_prob": 0.9901634344910256, "rul_est_h": 43.721783697701056, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1335, "machine_id": "M015", "reason": "novel sensor signature, RUL~151h", "risk_prob": 0.00010610382897769587, "rul_est_h": 151.39135200423053, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1335, "machine_id": "M005", "reason": "novel sensor signature, RUL~214h", "risk_prob": 8.61011753466715e-05, "rul_est_h": 213.64126903450392, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1337, "machine_id": "M038", "reason": "novel sensor signature, RUL~488h", "risk_prob": 9.507438772690629e-05, "rul_est_h": 487.8739255778079, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1338, "machine_id": "M000", "reason": "P(fail<=72h)=1.00, RUL~31h", "risk_prob": 0.9957915455321706, "rul_est_h": 31.215747778924165, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1343, "machine_id": "M024", "reason": "P(fail<=72h)=0.99, RUL~31h", "risk_prob": 0.994736440323683, "rul_est_h": 30.549723506150016, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1346, "machine_id": "M006", "reason": "novel sensor signature, RUL~180h", "risk_prob": 9.588253682663412e-05, "rul_est_h": 179.75972284576645, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1352, "machine_id": "M028", "reason": "P(fail<=72h)=1.00, RUL~24h", "risk_prob": 0.9991950006240155, "rul_est_h": 24.16884602816862, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1353, "machine_id": "M027", "reason": "novel sensor signature, RUL~238h", "risk_prob": 9.078987202617927e-05, "rul_est_h": 238.27377964684516, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1358, "machine_id": "M033", "reason": "P(fail<=72h)=1.00, RUL~12h", "risk_prob": 0.999718149380834, "rul_est_h": 12.04037944744357, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1359, "machine_id": "M015", "reason": "novel sensor signature, RUL~147h", "risk_prob": 0.0002182004947845621, "rul_est_h": 147.3984836901477, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1359, "machine_id": "M005", "reason": "novel sensor signature, RUL~191h", "risk_prob": 0.0003507716524499879, "rul_est_h": 191.04147333431098, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1362, "machine_id": "M000", "reason": "P(fail<=72h)=1.00, RUL~16h", "risk_prob": 0.9995507491395713, "rul_est_h": 15.615494264160928, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1364, "machine_id": "M035", "reason": "novel sensor signature, RUL~245h", "risk_prob": 8.75352843615853e-05, "rul_est_h": 244.98497342254026, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1367, "machine_id": "M024", "reason": "P(fail<=72h)=1.00, RUL~11h", "risk_prob": 0.9990771803115909, "rul_est_h": 11.264470667034791, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1369, "machine_id": "M024", "reason": "novel sensor signature, RUL~108h", "risk_prob": 0.00045785153932529645, "rul_est_h": 108.21620181235389, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1369, "machine_id": "M033", "reason": "novel sensor signature, RUL~75h", "risk_prob": 0.001217776865061844, "rul_est_h": 75.31520604741516, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1370, "machine_id": "M006", "reason": "novel sensor signature, RUL~186h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 186.3640889174158, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1371, "machine_id": "M030", "reason": "novel sensor signature, RUL~350h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 350.3199221063333, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1375, "machine_id": "M000", "reason": "novel sensor signature, RUL~80h", "risk_prob": 0.00087976763933401, "rul_est_h": 80.44424742778989, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1376, "machine_id": "M028", "reason": "P(fail<=72h)=1.00, RUL~21h", "risk_prob": 0.9991528314014237, "rul_est_h": 21.14299175927327, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1377, "machine_id": "M027", "reason": "novel sensor signature, RUL~186h", "risk_prob": 9.366175924406619e-05, "rul_est_h": 185.51346953520004, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1378, "machine_id": "M028", "reason": "novel sensor signature, RUL~142h", "risk_prob": 0.00010342903925957133, "rul_est_h": 141.6431856405356, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1383, "machine_id": "M005", "reason": "novel sensor signature, RUL~147h", "risk_prob": 0.0015661798043207222, "rul_est_h": 147.35696036053417, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1383, "machine_id": "M015", "reason": "novel sensor signature, RUL~106h", "risk_prob": 0.014833950871839, "rul_est_h": 105.58089786244028, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1394, "machine_id": "M006", "reason": "novel sensor signature, RUL~143h", "risk_prob": 0.00022829155598564808, "rul_est_h": 142.93503096387104, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1394, "machine_id": "M035", "reason": "novel sensor signature, RUL~307h", "risk_prob": 9.781001461135093e-05, "rul_est_h": 307.2879293975555, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1395, "machine_id": "M021", "reason": "novel sensor signature, RUL~254h", "risk_prob": 0.00012582863843203817, "rul_est_h": 253.61736530883067, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1397, "machine_id": "M030", "reason": "novel sensor signature, RUL~280h", "risk_prob": 0.0001325238568672817, "rul_est_h": 279.79312969091956, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1400, "machine_id": "M000", "reason": "novel sensor signature, RUL~483h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 483.27357479696724, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1401, "machine_id": "M027", "reason": "novel sensor signature, RUL~187h", "risk_prob": 0.00012322758637119433, "rul_est_h": 187.19518173550034, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1403, "machine_id": "M028", "reason": "novel sensor signature, RUL~479h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 479.0491863119669, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1407, "machine_id": "M015", "reason": "novel sensor signature, RUL~96h", "risk_prob": 0.004281869718650068, "rul_est_h": 95.72398099919933, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1411, "machine_id": "M005", "reason": "novel sensor signature, RUL~174h", "risk_prob": 0.00023682802062884248, "rul_est_h": 173.63820043498703, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1416, "machine_id": "M015", "reason": "P(fail<=72h)=0.25, RUL~72h", "risk_prob": 0.2538978288307586, "rul_est_h": 71.87733962414215, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1418, "machine_id": "M006", "reason": "novel sensor signature, RUL~121h", "risk_prob": 0.0008526120789943625, "rul_est_h": 121.16342922865518, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1418, "machine_id": "M035", "reason": "novel sensor signature, RUL~245h", "risk_prob": 9.017016384640947e-05, "rul_est_h": 244.56480434379512, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1421, "machine_id": "M030", "reason": "novel sensor signature, RUL~219h", "risk_prob": 9.495793422703008e-05, "rul_est_h": 219.4422043275461, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1422, "machine_id": "M015", "reason": "P(fail<=72h)=0.68, RUL~60h", "risk_prob": 0.6782920481543164, "rul_est_h": 59.822556972565806, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1425, "machine_id": "M027", "reason": "novel sensor signature, RUL~125h", "risk_prob": 0.00053360585859589, "rul_est_h": 124.85690469677793, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1435, "machine_id": "M005", "reason": "novel sensor signature, RUL~128h", "risk_prob": 0.002108910031070314, "rul_est_h": 128.49038932199252, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1442, "machine_id": "M006", "reason": "novel sensor signature, RUL~101h", "risk_prob": 0.0006103082826754091, "rul_est_h": 101.18854036508303, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1442, "machine_id": "M035", "reason": "novel sensor signature, RUL~231h", "risk_prob": 0.00013891229722583763, "rul_est_h": 231.28276196922118, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1446, "machine_id": "M015", "reason": "P(fail<=72h)=1.00, RUL~31h", "risk_prob": 0.9975111065727402, "rul_est_h": 31.085494502323126, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1447, "machine_id": "M030", "reason": "novel sensor signature, RUL~211h", "risk_prob": 9.093086159493483e-05, "rul_est_h": 211.1248292456608, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1449, "machine_id": "M027", "reason": "novel sensor signature, RUL~106h", "risk_prob": 0.0010105361196406234, "rul_est_h": 106.41486839884493, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1451, "machine_id": "M021", "reason": "novel sensor signature, RUL~237h", "risk_prob": 9.705769767422013e-05, "rul_est_h": 236.93785500927095, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1452, "machine_id": "M006", "reason": "P(fail<=72h)=0.53, RUL~77h", "risk_prob": 0.5336786468232252, "rul_est_h": 77.06234165554223, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1453, "machine_id": "M006", "reason": "P(fail<=72h)=0.47, RUL~80h", "risk_prob": 0.4656874672192205, "rul_est_h": 79.7014304145379, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1456, "machine_id": "M028", "reason": "novel sensor signature, RUL~481h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 480.84656754471393, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1459, "machine_id": "M005", "reason": "novel sensor signature, RUL~117h", "risk_prob": 0.0007816780326645396, "rul_est_h": 116.56519574426494, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1466, "machine_id": "M035", "reason": "novel sensor signature, RUL~170h", "risk_prob": 0.0002790482733982524, "rul_est_h": 170.2471023972577, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1470, "machine_id": "M015", "reason": "P(fail<=72h)=1.00, RUL~23h", "risk_prob": 0.9990304478843635, "rul_est_h": 23.166097702025045, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1473, "machine_id": "M027", "reason": "novel sensor signature, RUL~94h", "risk_prob": 0.0013340919962179446, "rul_est_h": 93.83701806186727, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1474, "machine_id": "M030", "reason": "novel sensor signature, RUL~190h", "risk_prob": 8.718695405282103e-05, "rul_est_h": 190.04805932291185, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1475, "machine_id": "M021", "reason": "novel sensor signature, RUL~213h", "risk_prob": 8.697886761023038e-05, "rul_est_h": 213.4775154575637, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1476, "machine_id": "M006", "reason": "P(fail<=72h)=1.00, RUL~45h", "risk_prob": 0.9955937215724432, "rul_est_h": 45.27313795857086, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1483, "machine_id": "M005", "reason": "novel sensor signature, RUL~120h", "risk_prob": 0.03877411948543053, "rul_est_h": 119.53671449056702, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1485, "machine_id": "M027", "reason": "P(fail<=72h)=0.24, RUL~64h", "risk_prob": 0.2427501856265787, "rul_est_h": 64.21710746035927, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1490, "machine_id": "M035", "reason": "novel sensor signature, RUL~149h", "risk_prob": 0.00032474345983982887, "rul_est_h": 149.4338677471524, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1494, "machine_id": "M015", "reason": "P(fail<=72h)=1.00, RUL~5h", "risk_prob": 0.9998709276297199, "rul_est_h": 4.819656276686196, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1497, "machine_id": "M005", "reason": "P(fail<=72h)=0.41, RUL~83h", "risk_prob": 0.40593378847353573, "rul_est_h": 83.2636879208213, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1497, "machine_id": "M027", "reason": "P(fail<=72h)=0.66, RUL~67h", "risk_prob": 0.6647228243647448, "rul_est_h": 66.89238863317638, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1498, "machine_id": "M030", "reason": "novel sensor signature, RUL~240h", "risk_prob": 0.0001761349762463196, "rul_est_h": 240.20772643774546, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1498, "machine_id": "M015", "reason": "novel sensor signature, RUL~93h", "risk_prob": 0.0016741030393588887, "rul_est_h": 93.06514257620645, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1499, "machine_id": "M005", "reason": "P(fail<=72h)=0.95, RUL~61h", "risk_prob": 0.9533864934202515, "rul_est_h": 60.704391004796804, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1499, "machine_id": "M021", "reason": "novel sensor signature, RUL~152h", "risk_prob": 0.00011003579674117422, "rul_est_h": 151.71701201434993, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1500, "machine_id": "M006", "reason": "P(fail<=72h)=0.99, RUL~28h", "risk_prob": 0.9936025351489589, "rul_est_h": 27.662428846253054, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1509, "machine_id": "M027", "reason": "P(fail<=72h)=0.32, RUL~73h", "risk_prob": 0.3158933618353271, "rul_est_h": 73.03258461233544, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1514, "machine_id": "M035", "reason": "novel sensor signature, RUL~139h", "risk_prob": 0.0003162751652063552, "rul_est_h": 139.26495295250916, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1521, "machine_id": "M008", "reason": "novel sensor signature, RUL~247h", "risk_prob": 9.507438772690629e-05, "rul_est_h": 246.76298884693273, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1521, "machine_id": "M027", "reason": "P(fail<=72h)=0.99, RUL~44h", "risk_prob": 0.9928139903216894, "rul_est_h": 43.924380219434646, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1522, "machine_id": "M030", "reason": "novel sensor signature, RUL~130h", "risk_prob": 0.000298367578664034, "rul_est_h": 130.16930675853538, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1523, "machine_id": "M005", "reason": "P(fail<=72h)=0.66, RUL~81h", "risk_prob": 0.662206715752605, "rul_est_h": 81.02326495687747, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1523, "machine_id": "M021", "reason": "novel sensor signature, RUL~164h", "risk_prob": 0.00020362278448204615, "rul_est_h": 164.4180509281603, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1524, "machine_id": "M006", "reason": "novel sensor signature, RUL~93h", "risk_prob": 0.0005061820190702221, "rul_est_h": 93.17871259468859, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1537, "machine_id": "M013", "reason": "novel sensor signature, RUL~325h", "risk_prob": 8.317549673893186e-05, "rul_est_h": 324.8656804913467, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1538, "machine_id": "M035", "reason": "novel sensor signature, RUL~115h", "risk_prob": 0.0008202101583454253, "rul_est_h": 114.95354859389404, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1545, "machine_id": "M027", "reason": "P(fail<=72h)=0.99, RUL~32h", "risk_prob": 0.9935440173457797, "rul_est_h": 32.229544473320445, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1546, "machine_id": "M030", "reason": "novel sensor signature, RUL~179h", "risk_prob": 0.00021933260871807647, "rul_est_h": 179.11191785358815, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1547, "machine_id": "M008", "reason": "novel sensor signature, RUL~258h", "risk_prob": 0.0001122271427499821, "rul_est_h": 257.99980214730203, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1547, "machine_id": "M021", "reason": "novel sensor signature, RUL~165h", "risk_prob": 0.000321657532213458, "rul_est_h": 165.14487242292864, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1547, "machine_id": "M005", "reason": "P(fail<=72h)=0.99, RUL~44h", "risk_prob": 0.9889972113875386, "rul_est_h": 43.91447325815846, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1562, "machine_id": "M035", "reason": "novel sensor signature, RUL~130h", "risk_prob": 0.00024270676490791403, "rul_est_h": 129.65079874716878, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1566, "machine_id": "M013", "reason": "novel sensor signature, RUL~243h", "risk_prob": 7.53858650713214e-05, "rul_est_h": 243.17891829557772, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1569, "machine_id": "M027", "reason": "P(fail<=72h)=1.00, RUL~11h", "risk_prob": 0.9987363365908056, "rul_est_h": 10.949221487905419, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1570, "machine_id": "M030", "reason": "novel sensor signature, RUL~156h", "risk_prob": 0.0007516147232181343, "rul_est_h": 156.24993268028032, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1571, "machine_id": "M005", "reason": "P(fail<=72h)=0.63, RUL~43h", "risk_prob": 0.6312897668271787, "rul_est_h": 42.97735667374363, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1571, "machine_id": "M021", "reason": "novel sensor signature, RUL~144h", "risk_prob": 0.0004427796108685377, "rul_est_h": 144.25576822600374, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1572, "machine_id": "M005", "reason": "novel sensor signature, RUL~164h", "risk_prob": 0.00013465943371208805, "rul_est_h": 163.86502118554458, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1575, "machine_id": "M027", "reason": "novel sensor signature, RUL~90h", "risk_prob": 0.0013498599368532733, "rul_est_h": 89.63058714251187, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1584, "machine_id": "M006", "reason": "novel sensor signature, RUL~482h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 482.1439322417414, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1585, "machine_id": "M008", "reason": "novel sensor signature, RUL~191h", "risk_prob": 0.0001038013529024721, "rul_est_h": 190.88129104763914, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1586, "machine_id": "M035", "reason": "novel sensor signature, RUL~73h", "risk_prob": 0.029987909390700722, "rul_est_h": 73.36006610503891, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1591, "machine_id": "M035", "reason": "P(fail<=72h)=0.32, RUL~55h", "risk_prob": 0.3168833924834929, "rul_est_h": 55.08413234533687, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1594, "machine_id": "M030", "reason": "novel sensor signature, RUL~115h", "risk_prob": 0.0014806130128515247, "rul_est_h": 114.89527521468348, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1594, "machine_id": "M031", "reason": "novel sensor signature, RUL~174h", "risk_prob": 8.508700470399149e-05, "rul_est_h": 173.69322676775087, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1595, "machine_id": "M013", "reason": "novel sensor signature, RUL~272h", "risk_prob": 9.507438772690629e-05, "rul_est_h": 271.53744081667696, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1595, "machine_id": "M021", "reason": "novel sensor signature, RUL~115h", "risk_prob": 0.0011731110500286233, "rul_est_h": 115.14839829779356, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1596, "machine_id": "M005", "reason": "novel sensor signature, RUL~475h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 475.371829505757, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1597, "machine_id": "M035", "reason": "P(fail<=72h)=0.92, RUL~54h", "risk_prob": 0.922028733618941, "rul_est_h": 54.09661974693303, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1604, "machine_id": "M016", "reason": "novel sensor signature, RUL~166h", "risk_prob": 9.123889439244721e-05, "rul_est_h": 165.7357951017538, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1608, "machine_id": "M037", "reason": "novel sensor signature, RUL~326h", "risk_prob": 9.361153050472318e-05, "rul_est_h": 326.4581031383888, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1609, "machine_id": "M008", "reason": "novel sensor signature, RUL~215h", "risk_prob": 9.194320291908515e-05, "rul_est_h": 215.17760934831978, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1616, "machine_id": "M030", "reason": "P(fail<=72h)=0.44, RUL~59h", "risk_prob": 0.4355058110012652, "rul_est_h": 58.781924291090235, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1618, "machine_id": "M031", "reason": "novel sensor signature, RUL~144h", "risk_prob": 9.864141472915086e-05, "rul_est_h": 143.89329489912092, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1619, "machine_id": "M021", "reason": "novel sensor signature, RUL~119h", "risk_prob": 0.0007234517566435612, "rul_est_h": 118.5680055987501, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1621, "machine_id": "M035", "reason": "P(fail<=72h)=0.98, RUL~68h", "risk_prob": 0.9842760247243444, "rul_est_h": 67.6961299619556, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1623, "machine_id": "M030", "reason": "novel sensor signature, RUL~67h", "risk_prob": 0.17496793300193794, "rul_est_h": 67.16245483191484, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1625, "machine_id": "M005", "reason": "novel sensor signature, RUL~498h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 497.8323614659635, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1625, "machine_id": "M013", "reason": "novel sensor signature, RUL~210h", "risk_prob": 0.00015079694223416704, "rul_est_h": 210.20242896179397, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1629, "machine_id": "M021", "reason": "P(fail<=72h)=0.25, RUL~87h", "risk_prob": 0.25448147414468286, "rul_est_h": 86.53609239518843, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1630, "machine_id": "M030", "reason": "P(fail<=72h)=0.50, RUL~53h", "risk_prob": 0.5028128370520296, "rul_est_h": 52.87804846300456, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1633, "machine_id": "M016", "reason": "novel sensor signature, RUL~129h", "risk_prob": 0.0001744626496486356, "rul_est_h": 129.2427799002126, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1634, "machine_id": "M008", "reason": "novel sensor signature, RUL~154h", "risk_prob": 0.00010743638419352474, "rul_est_h": 154.2043167481879, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1637, "machine_id": "M021", "reason": "P(fail<=72h)=0.59, RUL~93h", "risk_prob": 0.5922733148436479, "rul_est_h": 92.5981024539563, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1642, "machine_id": "M031", "reason": "novel sensor signature, RUL~95h", "risk_prob": 0.018144922599249918, "rul_est_h": 95.20129926111481, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1644, "machine_id": "M037", "reason": "novel sensor signature, RUL~252h", "risk_prob": 0.000107435853682102, "rul_est_h": 251.8255973904795, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1645, "machine_id": "M035", "reason": "P(fail<=72h)=0.99, RUL~27h", "risk_prob": 0.9925424228705992, "rul_est_h": 27.31932355140597, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1649, "machine_id": "M013", "reason": "novel sensor signature, RUL~239h", "risk_prob": 0.0003042652539035755, "rul_est_h": 238.79331001170735, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1654, "machine_id": "M030", "reason": "P(fail<=72h)=0.99, RUL~41h", "risk_prob": 0.9885010845061737, "rul_est_h": 40.60838560512866, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1657, "machine_id": "M016", "reason": "novel sensor signature, RUL~104h", "risk_prob": 0.0009551368009560585, "rul_est_h": 103.80333789015309, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1658, "machine_id": "M008", "reason": "novel sensor signature, RUL~162h", "risk_prob": 0.0002001336889551896, "rul_est_h": 161.67749515727513, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1660, "machine_id": "M023", "reason": "novel sensor signature, RUL~331h", "risk_prob": 8.80786604719165e-05, "rul_est_h": 331.32570008594996, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1661, "machine_id": "M021", "reason": "P(fail<=72h)=0.99, RUL~37h", "risk_prob": 0.98554027984253, "rul_est_h": 37.12455384048306, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1661, "machine_id": "M031", "reason": "P(fail<=72h)=0.22, RUL~79h", "risk_prob": 0.21690992145248808, "rul_est_h": 78.68631639958257, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1667, "machine_id": "M031", "reason": "P(fail<=72h)=0.52, RUL~82h", "risk_prob": 0.518206248369134, "rul_est_h": 82.41417930386322, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1668, "machine_id": "M037", "reason": "novel sensor signature, RUL~207h", "risk_prob": 0.00011598537968073487, "rul_est_h": 206.81473369271743, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1669, "machine_id": "M035", "reason": "P(fail<=72h)=0.96, RUL~19h", "risk_prob": 0.9632240054556709, "rul_est_h": 19.427886346754367, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1670, "machine_id": "M035", "reason": "novel sensor signature, RUL~126h", "risk_prob": 0.0006422262610658148, "rul_est_h": 125.69970074705267, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1671, "machine_id": "M005", "reason": "novel sensor signature, RUL~494h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 493.85771836821067, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1673, "machine_id": "M013", "reason": "novel sensor signature, RUL~175h", "risk_prob": 0.00021116568791732258, "rul_est_h": 174.9729360439051, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1678, "machine_id": "M030", "reason": "P(fail<=72h)=0.98, RUL~31h", "risk_prob": 0.9815074171316133, "rul_est_h": 31.142175349897276, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1681, "machine_id": "M016", "reason": "novel sensor signature, RUL~91h", "risk_prob": 0.026963935619328125, "rul_est_h": 91.01093541905682, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1682, "machine_id": "M008", "reason": "novel sensor signature, RUL~122h", "risk_prob": 0.0013483588572012776, "rul_est_h": 121.61801397442305, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1685, "machine_id": "M021", "reason": "P(fail<=72h)=1.00, RUL~19h", "risk_prob": 0.999640550275518, "rul_est_h": 19.37206209778061, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1691, "machine_id": "M011", "reason": "novel sensor signature, RUL~193h", "risk_prob": 9.635674372050788e-05, "rul_est_h": 193.22208661718125, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1691, "machine_id": "M031", "reason": "P(fail<=72h)=0.98, RUL~67h", "risk_prob": 0.9833011141731987, "rul_est_h": 66.71566324550666, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1691, "machine_id": "M016", "reason": "P(fail<=72h)=0.36, RUL~80h", "risk_prob": 0.36357494549709374, "rul_est_h": 80.26198808036885, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1692, "machine_id": "M016", "reason": "P(fail<=72h)=0.63, RUL~76h", "risk_prob": 0.6251178990534341, "rul_est_h": 75.75787855180806, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1694, "machine_id": "M035", "reason": "novel sensor signature, RUL~490h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 490.17000062582474, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1695, "machine_id": "M037", "reason": "novel sensor signature, RUL~221h", "risk_prob": 0.00011705508950002767, "rul_est_h": 221.2233801529646, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1697, "machine_id": "M013", "reason": "novel sensor signature, RUL~154h", "risk_prob": 0.0009193484954347722, "rul_est_h": 154.21141219528238, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1702, "machine_id": "M030", "reason": "P(fail<=72h)=0.99, RUL~15h", "risk_prob": 0.9928784299692124, "rul_est_h": 14.819277116721572, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1704, "machine_id": "M008", "reason": "P(fail<=72h)=0.25, RUL~82h", "risk_prob": 0.25320106578061147, "rul_est_h": 82.24571269190416, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1706, "machine_id": "M030", "reason": "novel sensor signature, RUL~163h", "risk_prob": 0.0001716221048008891, "rul_est_h": 163.33116216367188, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1707, "machine_id": "M008", "reason": "novel sensor signature, RUL~83h", "risk_prob": 0.1032835686487219, "rul_est_h": 83.06875477354856, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1709, "machine_id": "M021", "reason": "P(fail<=72h)=0.89, RUL~5h", "risk_prob": 0.890715219710914, "rul_est_h": 4.503464372616268, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1710, "machine_id": "M021", "reason": "novel sensor signature, RUL~96h", "risk_prob": 0.00038334325258050867, "rul_est_h": 96.42036059228477, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1711, "machine_id": "M008", "reason": "P(fail<=72h)=0.52, RUL~71h", "risk_prob": 0.5164492177564146, "rul_est_h": 70.8776575076537, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1713, "machine_id": "M039", "reason": "novel sensor signature, RUL~146h", "risk_prob": 0.00033220245988529855, "rul_est_h": 146.00945697468623, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1715, "machine_id": "M031", "reason": "P(fail<=72h)=1.00, RUL~25h", "risk_prob": 0.9977047098955655, "rul_est_h": 24.52078505269588, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1716, "machine_id": "M016", "reason": "P(fail<=72h)=0.99, RUL~53h", "risk_prob": 0.9931154043922767, "rul_est_h": 52.54858354092323, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1718, "machine_id": "M035", "reason": "novel sensor signature, RUL~500h", "risk_prob": 8.369300301349398e-05, "rul_est_h": 499.937971920064, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1719, "machine_id": "M037", "reason": "novel sensor signature, RUL~184h", "risk_prob": 0.0001454764174367999, "rul_est_h": 184.09637071896714, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1721, "machine_id": "M013", "reason": "novel sensor signature, RUL~143h", "risk_prob": 0.00032497130444786624, "rul_est_h": 143.00851861611605, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1729, "machine_id": "M026", "reason": "novel sensor signature, RUL~234h", "risk_prob": 0.00010392197614945089, "rul_est_h": 233.92637986449867, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1730, "machine_id": "M008", "reason": "P(fail<=72h)=0.33, RUL~66h", "risk_prob": 0.3315329207094716, "rul_est_h": 65.94089172741147, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1732, "machine_id": "M011", "reason": "novel sensor signature, RUL~192h", "risk_prob": 0.00010125244836116326, "rul_est_h": 191.8059854385541, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1735, "machine_id": "M008", "reason": "P(fail<=72h)=0.97, RUL~37h", "risk_prob": 0.9668258736500672, "rul_est_h": 37.24553935329136, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1737, "machine_id": "M039", "reason": "novel sensor signature, RUL~149h", "risk_prob": 0.00010452734065321212, "rul_est_h": 148.8612752093364, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1739, "machine_id": "M031", "reason": "P(fail<=72h)=0.95, RUL~23h", "risk_prob": 0.9526421699866395, "rul_est_h": 23.259699080314466, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1740, "machine_id": "M016", "reason": "P(fail<=72h)=1.00, RUL~27h", "risk_prob": 0.9985415118441726, "rul_est_h": 26.862193807071783, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1740, "machine_id": "M031", "reason": "novel sensor signature, RUL~72h", "risk_prob": 0.01148352943126147, "rul_est_h": 71.87873086449662, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1743, "machine_id": "M037", "reason": "novel sensor signature, RUL~147h", "risk_prob": 0.0004665941996638004, "rul_est_h": 146.77558662245863, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1743, "machine_id": "M030", "reason": "novel sensor signature, RUL~500h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 500.0, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1746, "machine_id": "M013", "reason": "novel sensor signature, RUL~102h", "risk_prob": 0.00043421278129401934, "rul_est_h": 101.9889934223351, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1747, "machine_id": "M035", "reason": "novel sensor signature, RUL~495h", "risk_prob": 8.244946678445088e-05, "rul_est_h": 494.5089494623123, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1753, "machine_id": "M023", "reason": "novel sensor signature, RUL~255h", "risk_prob": 9.403320979869559e-05, "rul_est_h": 255.11276040195904, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1754, "machine_id": "M026", "reason": "novel sensor signature, RUL~159h", "risk_prob": 0.00011427859565381012, "rul_est_h": 158.73276567836268, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1755, "machine_id": "M010", "reason": "novel sensor signature, RUL~199h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 198.94836405782797, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1756, "machine_id": "M011", "reason": "novel sensor signature, RUL~186h", "risk_prob": 0.00010297572225554503, "rul_est_h": 186.02810988127302, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1759, "machine_id": "M008", "reason": "P(fail<=72h)=0.75, RUL~45h", "risk_prob": 0.7452207867694246, "rul_est_h": 45.28685567145712, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1760, "machine_id": "M021", "reason": "novel sensor signature, RUL~473h", "risk_prob": 8.838761922752977e-05, "rul_est_h": 473.1449955737136, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1761, "machine_id": "M039", "reason": "novel sensor signature, RUL~119h", "risk_prob": 0.00022273854661175382, "rul_est_h": 119.27782952453181, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1764, "machine_id": "M016", "reason": "P(fail<=72h)=1.00, RUL~8h", "risk_prob": 0.9995071773178166, "rul_est_h": 7.627712166949436, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1767, "machine_id": "M037", "reason": "novel sensor signature, RUL~146h", "risk_prob": 0.00026523975008440123, "rul_est_h": 145.66048467690334, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1768, "machine_id": "M016", "reason": "novel sensor signature, RUL~61h", "risk_prob": 0.03995303550023896, "rul_est_h": 60.94573984236319, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1770, "machine_id": "M013", "reason": "novel sensor signature, RUL~91h", "risk_prob": 0.031563248199048766, "rul_est_h": 91.06798238200268, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1772, "machine_id": "M035", "reason": "novel sensor signature, RUL~494h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 493.83966199309657, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1774, "machine_id": "M031", "reason": "novel sensor signature, RUL~484h", "risk_prob": 9.002464275383639e-05, "rul_est_h": 483.8338763528018, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1777, "machine_id": "M023", "reason": "novel sensor signature, RUL~193h", "risk_prob": 8.870038983394548e-05, "rul_est_h": 192.61750849929425, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1778, "machine_id": "M026", "reason": "novel sensor signature, RUL~138h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 138.44091960059993, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1780, "machine_id": "M010", "reason": "novel sensor signature, RUL~145h", "risk_prob": 9.635674372050788e-05, "rul_est_h": 145.28767993657215, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1780, "machine_id": "M011", "reason": "novel sensor signature, RUL~157h", "risk_prob": 0.0005163254827771339, "rul_est_h": 157.1959448789811, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1781, "machine_id": "M013", "reason": "P(fail<=72h)=0.24, RUL~85h", "risk_prob": 0.2357033254819934, "rul_est_h": 85.4361755259438, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1781, "machine_id": "M020", "reason": "novel sensor signature, RUL~340h", "risk_prob": 0.0001081169623085989, "rul_est_h": 339.77766026343096, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1783, "machine_id": "M008", "reason": "P(fail<=72h)=0.99, RUL~28h", "risk_prob": 0.994524347512947, "rul_est_h": 27.97224758992318, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1785, "machine_id": "M039", "reason": "novel sensor signature, RUL~101h", "risk_prob": 0.009800714351099124, "rul_est_h": 101.15503275493585, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1791, "machine_id": "M030", "reason": "novel sensor signature, RUL~494h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 493.5941260759819, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1791, "machine_id": "M037", "reason": "novel sensor signature, RUL~111h", "risk_prob": 0.0009938636922773862, "rul_est_h": 111.15092311704744, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1793, "machine_id": "M013", "reason": "P(fail<=72h)=0.51, RUL~75h", "risk_prob": 0.5134136833005765, "rul_est_h": 74.8712189934309, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1796, "machine_id": "M035", "reason": "novel sensor signature, RUL~497h", "risk_prob": 8.369300301349398e-05, "rul_est_h": 497.1595061737002, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1798, "machine_id": "M013", "reason": "novel sensor signature, RUL~77h", "risk_prob": 0.17142022671714566, "rul_est_h": 76.68034613308936, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1800, "machine_id": "M031", "reason": "novel sensor signature, RUL~477h", "risk_prob": 8.508700470399149e-05, "rul_est_h": 476.8661464202588, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1801, "machine_id": "M016", "reason": "novel sensor signature, RUL~491h", "risk_prob": 7.91026129071966e-05, "rul_est_h": 491.0065171251031, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1801, "machine_id": "M023", "reason": "novel sensor signature, RUL~203h", "risk_prob": 8.062074281585662e-05, "rul_est_h": 202.81658895237612, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1803, "machine_id": "M026", "reason": "novel sensor signature, RUL~124h", "risk_prob": 0.0001347690464173778, "rul_est_h": 123.95523826292603, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1804, "machine_id": "M011", "reason": "novel sensor signature, RUL~183h", "risk_prob": 0.00046786258591910364, "rul_est_h": 182.80984045877406, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1806, "machine_id": "M010", "reason": "novel sensor signature, RUL~118h", "risk_prob": 0.00019735435552559674, "rul_est_h": 117.91801079527627, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1806, "machine_id": "M013", "reason": "P(fail<=72h)=0.42, RUL~70h", "risk_prob": 0.42489326879198736, "rul_est_h": 69.66628890506158, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1807, "machine_id": "M022", "reason": "novel sensor signature, RUL~172h", "risk_prob": 8.369300301349398e-05, "rul_est_h": 172.24593433418417, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1807, "machine_id": "M008", "reason": "P(fail<=72h)=1.00, RUL~11h", "risk_prob": 0.9993033176219623, "rul_est_h": 10.784112466164885, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1808, "machine_id": "M001", "reason": "novel sensor signature, RUL~176h", "risk_prob": 9.159234820058917e-05, "rul_est_h": 176.23057899266252, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1809, "machine_id": "M008", "reason": "novel sensor signature, RUL~100h", "risk_prob": 0.0003374031739760969, "rul_est_h": 100.17508755479885, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1809, "machine_id": "M039", "reason": "P(fail<=72h)=0.21, RUL~73h", "risk_prob": 0.21450439723985185, "rul_est_h": 73.14570979568697, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1810, "machine_id": "M039", "reason": "novel sensor signature, RUL~75h", "risk_prob": 0.1130551742422327, "rul_est_h": 74.96986880661434, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1815, "machine_id": "M037", "reason": "novel sensor signature, RUL~92h", "risk_prob": 0.007938717500485984, "rul_est_h": 91.80968461703411, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1816, "machine_id": "M039", "reason": "P(fail<=72h)=0.75, RUL~73h", "risk_prob": 0.7539395321280491, "rul_est_h": 73.05745440040931, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1817, "machine_id": "M013", "reason": "P(fail<=72h)=0.85, RUL~79h", "risk_prob": 0.85342802033385, "rul_est_h": 78.64886091690506, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1825, "machine_id": "M020", "reason": "novel sensor signature, RUL~407h", "risk_prob": 9.340222973412331e-05, "rul_est_h": 406.7033404351321, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1825, "machine_id": "M023", "reason": "novel sensor signature, RUL~192h", "risk_prob": 8.244946678445088e-05, "rul_est_h": 191.88062299722907, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1826, "machine_id": "M026", "reason": "P(fail<=72h)=0.40, RUL~96h", "risk_prob": 0.3971920556159661, "rul_est_h": 95.82919754862252, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1829, "machine_id": "M026", "reason": "P(fail<=72h)=0.52, RUL~86h", "risk_prob": 0.5169566996521097, "rul_est_h": 85.72372341927232, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1830, "machine_id": "M010", "reason": "novel sensor signature, RUL~119h", "risk_prob": 0.0005130137766902547, "rul_est_h": 119.31725509873162, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1830, "machine_id": "M011", "reason": "novel sensor signature, RUL~101h", "risk_prob": 0.0009982646702453126, "rul_est_h": 100.93921118189354, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1835, "machine_id": "M001", "reason": "novel sensor signature, RUL~129h", "risk_prob": 0.00012222694888374303, "rul_est_h": 129.16594418875542, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1835, "machine_id": "M037", "reason": "P(fail<=72h)=1.00, RUL~106h", "risk_prob": 0.9985010442441782, "rul_est_h": 105.91493926915034, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1840, "machine_id": "M039", "reason": "P(fail<=72h)=1.00, RUL~60h", "risk_prob": 0.9967097191965385, "rul_est_h": 59.803791976174516, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1841, "machine_id": "M013", "reason": "P(fail<=72h)=0.99, RUL~31h", "risk_prob": 0.9910534678722605, "rul_est_h": 30.608060523346733, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1842, "machine_id": "M037", "reason": "P(fail<=72h)=0.43, RUL~89h", "risk_prob": 0.4342837173047662, "rul_est_h": 88.70903688855921, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1849, "machine_id": "M023", "reason": "novel sensor signature, RUL~147h", "risk_prob": 0.0003393732418581789, "rul_est_h": 146.5838500987171, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1853, "machine_id": "M026", "reason": "P(fail<=72h)=1.00, RUL~47h", "risk_prob": 0.9980550603601944, "rul_est_h": 47.12415925908678, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1854, "machine_id": "M010", "reason": "novel sensor signature, RUL~90h", "risk_prob": 0.009858712537168735, "rul_est_h": 90.11182870433468, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1854, "machine_id": "M011", "reason": "P(fail<=72h)=0.53, RUL~57h", "risk_prob": 0.5297081064014274, "rul_est_h": 57.43113822835884, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1855, "machine_id": "M022", "reason": "novel sensor signature, RUL~124h", "risk_prob": 0.0001494976671470564, "rul_est_h": 124.41304795027044, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1858, "machine_id": "M011", "reason": "P(fail<=72h)=0.47, RUL~60h", "risk_prob": 0.4682832446144223, "rul_est_h": 59.88154552572676, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1859, "machine_id": "M001", "reason": "novel sensor signature, RUL~96h", "risk_prob": 0.015411062326806484, "rul_est_h": 96.3402842224477, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1859, "machine_id": "M037", "reason": "P(fail<=72h)=0.97, RUL~53h", "risk_prob": 0.9734216279253354, "rul_est_h": 53.36790227461201, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1864, "machine_id": "M039", "reason": "P(fail<=72h)=1.00, RUL~28h", "risk_prob": 0.9960522953589399, "rul_est_h": 27.577297450430656, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1865, "machine_id": "M013", "reason": "P(fail<=72h)=0.99, RUL~16h", "risk_prob": 0.9923062208890343, "rul_est_h": 16.212046249263704, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1868, "machine_id": "M020", "reason": "novel sensor signature, RUL~333h", "risk_prob": 8.21436578272051e-05, "rul_est_h": 333.2974231343538, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1873, "machine_id": "M010", "reason": "P(fail<=72h)=0.28, RUL~74h", "risk_prob": 0.2760887561889668, "rul_est_h": 73.7911424037205, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1873, "machine_id": "M001", "reason": "P(fail<=72h)=0.50, RUL~80h", "risk_prob": 0.4992520132246569, "rul_est_h": 79.72759950020162, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1873, "machine_id": "M023", "reason": "novel sensor signature, RUL~140h", "risk_prob": 0.0004835555613606999, "rul_est_h": 140.3876820447835, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1874, "machine_id": "M010", "reason": "P(fail<=72h)=0.55, RUL~72h", "risk_prob": 0.5473961044693524, "rul_est_h": 71.95572288365076, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1876, "machine_id": "M013", "reason": "novel sensor signature, RUL~122h", "risk_prob": 0.0007703134449478249, "rul_est_h": 122.09948875075179, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1877, "machine_id": "M026", "reason": "P(fail<=72h)=1.00, RUL~21h", "risk_prob": 0.9988828501184023, "rul_est_h": 21.05685721531356, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1878, "machine_id": "M011", "reason": "P(fail<=72h)=0.99, RUL~35h", "risk_prob": 0.9907831870462779, "rul_est_h": 34.55026351774742, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1879, "machine_id": "M022", "reason": "novel sensor signature, RUL~125h", "risk_prob": 0.0001957332548854966, "rul_est_h": 125.14297301477862, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1880, "machine_id": "M001", "reason": "P(fail<=72h)=0.61, RUL~71h", "risk_prob": 0.6132680544513663, "rul_est_h": 71.20988430711968, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1883, "machine_id": "M037", "reason": "P(fail<=72h)=0.99, RUL~32h", "risk_prob": 0.9943877229513384, "rul_est_h": 31.909500811310416, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1888, "machine_id": "M039", "reason": "P(fail<=72h)=1.00, RUL~7h", "risk_prob": 0.9996762123242346, "rul_est_h": 7.2147115209784305, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1890, "machine_id": "M039", "reason": "novel sensor signature, RUL~59h", "risk_prob": 0.013940843638101146, "rul_est_h": 59.07483925169517, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1897, "machine_id": "M020", "reason": "novel sensor signature, RUL~254h", "risk_prob": 0.0001050044717262971, "rul_est_h": 253.8049359448323, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1897, "machine_id": "M023", "reason": "novel sensor signature, RUL~121h", "risk_prob": 0.00045273929002313703, "rul_est_h": 121.42808017454043, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1897, "machine_id": "M026", "reason": "novel sensor signature, RUL~84h", "risk_prob": 0.00042519509597016596, "rul_est_h": 84.43198489637739, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1898, "machine_id": "M010", "reason": "P(fail<=72h)=0.99, RUL~44h", "risk_prob": 0.9948869053744936, "rul_est_h": 43.836252401207226, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1901, "machine_id": "M022", "reason": "P(fail<=72h)=0.21, RUL~80h", "risk_prob": 0.20988895173529135, "rul_est_h": 79.80624111114328, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1902, "machine_id": "M011", "reason": "P(fail<=72h)=1.00, RUL~27h", "risk_prob": 0.9984619470147964, "rul_est_h": 26.987433485986788, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1903, "machine_id": "M022", "reason": "novel sensor signature, RUL~78h", "risk_prob": 0.1557947459884446, "rul_est_h": 78.36801968673304, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1903, "machine_id": "M009", "reason": "novel sensor signature, RUL~210h", "risk_prob": 8.61011753466715e-05, "rul_est_h": 210.37457250277782, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1904, "machine_id": "M001", "reason": "P(fail<=72h)=0.99, RUL~46h", "risk_prob": 0.991325894691438, "rul_est_h": 46.035202210313116, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1907, "machine_id": "M037", "reason": "P(fail<=72h)=0.98, RUL~10h", "risk_prob": 0.9787899516418304, "rul_est_h": 10.189911960502162, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1908, "machine_id": "M037", "reason": "novel sensor signature, RUL~113h", "risk_prob": 0.0006422262610658148, "rul_est_h": 113.03918956373482, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1921, "machine_id": "M023", "reason": "novel sensor signature, RUL~97h", "risk_prob": 0.0011375468499281545, "rul_est_h": 97.01929191017429, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1922, "machine_id": "M010", "reason": "P(fail<=72h)=1.00, RUL~27h", "risk_prob": 0.9974362557067855, "rul_est_h": 26.830176933376332, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1925, "machine_id": "M022", "reason": "P(fail<=72h)=0.25, RUL~77h", "risk_prob": 0.2479165808088486, "rul_est_h": 77.4099269122497, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1926, "machine_id": "M011", "reason": "P(fail<=72h)=0.72, RUL~19h", "risk_prob": 0.721006652165189, "rul_est_h": 18.681304742473056, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1926, "machine_id": "M020", "reason": "novel sensor signature, RUL~259h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 258.6360925292081, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1927, "machine_id": "M011", "reason": "novel sensor signature, RUL~107h", "risk_prob": 0.000602484538167403, "rul_est_h": 107.26327718370445, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1928, "machine_id": "M001", "reason": "P(fail<=72h)=1.00, RUL~19h", "risk_prob": 0.9974564665449153, "rul_est_h": 19.440897031157526, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1929, "machine_id": "M022", "reason": "P(fail<=72h)=0.63, RUL~68h", "risk_prob": 0.6259005013018227, "rul_est_h": 67.66088373266041, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1930, "machine_id": "M023", "reason": "P(fail<=72h)=0.39, RUL~65h", "risk_prob": 0.3937403608177742, "rul_est_h": 65.15403754446749, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 1934, "machine_id": "M037", "reason": "novel sensor signature, RUL~481h", "risk_prob": 8.02956745849888e-05, "rul_est_h": 481.2861185152403, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1936, "machine_id": "M009", "reason": "novel sensor signature, RUL~206h", "risk_prob": 0.00010392197614945089, "rul_est_h": 205.84242727647992, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1938, "machine_id": "M025", "reason": "novel sensor signature, RUL~481h", "risk_prob": 0.00010276054330731411, "rul_est_h": 481.054910400377, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1939, "machine_id": "M023", "reason": "P(fail<=72h)=0.53, RUL~51h", "risk_prob": 0.5293916752803973, "rul_est_h": 51.309935722761104, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1942, "machine_id": "M039", "reason": "novel sensor signature, RUL~483h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 482.59716205424843, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1946, "machine_id": "M010", "reason": "P(fail<=72h)=1.00, RUL~0h", "risk_prob": 0.9971623134114603, "rul_est_h": 0.0, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1947, "machine_id": "M010", "reason": "novel sensor signature, RUL~28h", "risk_prob": 0.1896622414804137, "rul_est_h": 28.248487108151892, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1949, "machine_id": "M001", "reason": "novel sensor signature, RUL~49h", "risk_prob": 0.018482330014186994, "rul_est_h": 48.70699427074969, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1950, "machine_id": "M020", "reason": "novel sensor signature, RUL~313h", "risk_prob": 0.0003669176202327528, "rul_est_h": 313.2710587146144, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1953, "machine_id": "M022", "reason": "P(fail<=72h)=1.00, RUL~46h", "risk_prob": 0.9960257808110868, "rul_est_h": 45.66176670122125, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1960, "machine_id": "M009", "reason": "novel sensor signature, RUL~164h", "risk_prob": 0.00015527710840323235, "rul_est_h": 164.17785776351437, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1963, "machine_id": "M023", "reason": "P(fail<=72h)=0.97, RUL~46h", "risk_prob": 0.9664087281211469, "rul_est_h": 46.27980281951058, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1971, "machine_id": "M037", "reason": "novel sensor signature, RUL~487h", "risk_prob": 8.707433502963136e-05, "rul_est_h": 486.6257996113557, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1977, "machine_id": "M022", "reason": "P(fail<=72h)=1.00, RUL~21h", "risk_prob": 0.9971186990683989, "rul_est_h": 21.20836709576427, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1978, "machine_id": "M020", "reason": "novel sensor signature, RUL~227h", "risk_prob": 0.0002912804429125425, "rul_est_h": 227.00403484115617, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1984, "machine_id": "M018", "reason": "novel sensor signature, RUL~326h", "risk_prob": 0.00012772635331194943, "rul_est_h": 326.16536204492303, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 1987, "machine_id": "M023", "reason": "P(fail<=72h)=0.99, RUL~33h", "risk_prob": 0.9873531689563699, "rul_est_h": 32.651599983106, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 1991, "machine_id": "M009", "reason": "novel sensor signature, RUL~138h", "risk_prob": 0.00013141890950159769, "rul_est_h": 138.29499273976114, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2001, "machine_id": "M022", "reason": "P(fail<=72h)=0.99, RUL~0h", "risk_prob": 0.988697985937557, "rul_est_h": 0.0, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2002, "machine_id": "M022", "reason": "novel sensor signature, RUL~83h", "risk_prob": 0.0005262825801923771, "rul_est_h": 83.387043877451, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2004, "machine_id": "M020", "reason": "novel sensor signature, RUL~244h", "risk_prob": 0.0004336316062516315, "rul_est_h": 244.19262281776872, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2006, "machine_id": "M037", "reason": "novel sensor signature, RUL~492h", "risk_prob": 9.366175924406619e-05, "rul_est_h": 492.0059035057687, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2011, "machine_id": "M023", "reason": "P(fail<=72h)=1.00, RUL~19h", "risk_prob": 0.9984349092292112, "rul_est_h": 19.0662873602197, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2014, "machine_id": "M023", "reason": "P(fail<=72h)=0.48, RUL~34h", "risk_prob": 0.4800398745008901, "rul_est_h": 34.313317695106, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 2015, "machine_id": "M009", "reason": "novel sensor signature, RUL~120h", "risk_prob": 0.0006483156655263531, "rul_est_h": 120.08570930311934, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2015, "machine_id": "M023", "reason": "novel sensor signature, RUL~128h", "risk_prob": 0.00028976248080647406, "rul_est_h": 127.73782049468944, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2020, "machine_id": "M018", "reason": "novel sensor signature, RUL~262h", "risk_prob": 9.20006422415059e-05, "rul_est_h": 262.34746871303923, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2026, "machine_id": "M022", "reason": "novel sensor signature, RUL~488h", "risk_prob": 9.507438772690629e-05, "rul_est_h": 488.27881550632173, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2028, "machine_id": "M020", "reason": "novel sensor signature, RUL~209h", "risk_prob": 0.00024156999381298616, "rul_est_h": 208.90059977823844, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2039, "machine_id": "M009", "reason": "P(fail<=72h)=0.32, RUL~86h", "risk_prob": 0.32401858559093816, "rul_est_h": 86.05694719579728, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 2041, "machine_id": "M009", "reason": "novel sensor signature, RUL~84h", "risk_prob": 0.0665909050745041, "rul_est_h": 84.16199091278423, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2041, "machine_id": "M003", "reason": "novel sensor signature, RUL~293h", "risk_prob": 0.00010392197614945089, "rul_est_h": 293.48730392568734, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2042, "machine_id": "M009", "reason": "P(fail<=72h)=0.65, RUL~76h", "risk_prob": 0.6538061663479251, "rul_est_h": 76.14364738251433, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2049, "machine_id": "M018", "reason": "novel sensor signature, RUL~266h", "risk_prob": 0.00011003579674117422, "rul_est_h": 265.55740171538315, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2052, "machine_id": "M020", "reason": "novel sensor signature, RUL~237h", "risk_prob": 0.0005180752649830518, "rul_est_h": 236.75229933347276, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2058, "machine_id": "M019", "reason": "novel sensor signature, RUL~178h", "risk_prob": 0.0001241541067930018, "rul_est_h": 178.1948628007424, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2066, "machine_id": "M009", "reason": "P(fail<=72h)=0.99, RUL~52h", "risk_prob": 0.9908514189545622, "rul_est_h": 52.22169886995836, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2075, "machine_id": "M029", "reason": "novel sensor signature, RUL~381h", "risk_prob": 0.0001215603537735951, "rul_est_h": 381.493863550638, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2076, "machine_id": "M020", "reason": "novel sensor signature, RUL~140h", "risk_prob": 0.000526607217965359, "rul_est_h": 140.3974602491683, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2078, "machine_id": "M025", "reason": "novel sensor signature, RUL~304h", "risk_prob": 9.369419243297927e-05, "rul_est_h": 303.60841868750975, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2082, "machine_id": "M019", "reason": "novel sensor signature, RUL~176h", "risk_prob": 0.0002437570243751456, "rul_est_h": 175.79639506736012, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2087, "machine_id": "M018", "reason": "novel sensor signature, RUL~208h", "risk_prob": 9.622182658087606e-05, "rul_est_h": 207.81614912085942, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2090, "machine_id": "M009", "reason": "P(fail<=72h)=1.00, RUL~28h", "risk_prob": 0.9980904570849174, "rul_est_h": 27.83337922265456, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2096, "machine_id": "M012", "reason": "novel sensor signature, RUL~288h", "risk_prob": 9.366175924406619e-05, "rul_est_h": 287.63307417810347, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2100, "machine_id": "M020", "reason": "novel sensor signature, RUL~135h", "risk_prob": 0.00079489732991802, "rul_est_h": 135.3233235596503, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2106, "machine_id": "M019", "reason": "novel sensor signature, RUL~116h", "risk_prob": 0.004167890057141172, "rul_est_h": 116.49522640340297, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2108, "machine_id": "M029", "reason": "novel sensor signature, RUL~328h", "risk_prob": 8.260610067717238e-05, "rul_est_h": 327.8078840573639, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2114, "machine_id": "M009", "reason": "P(fail<=72h)=1.00, RUL~6h", "risk_prob": 0.998964615454133, "rul_est_h": 5.799207288431067, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2117, "machine_id": "M018", "reason": "novel sensor signature, RUL~183h", "risk_prob": 0.0002499725482702422, "rul_est_h": 183.35573052865033, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2117, "machine_id": "M009", "reason": "novel sensor signature, RUL~59h", "risk_prob": 0.03742045457655172, "rul_est_h": 59.217420219593436, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2124, "machine_id": "M020", "reason": "novel sensor signature, RUL~97h", "risk_prob": 0.03970613977621553, "rul_est_h": 96.91435467448683, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2127, "machine_id": "M032", "reason": "novel sensor signature, RUL~143h", "risk_prob": 9.717579201349163e-05, "rul_est_h": 143.04648604091153, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2130, "machine_id": "M019", "reason": "novel sensor signature, RUL~90h", "risk_prob": 0.07086127640959082, "rul_est_h": 89.88892450577042, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2138, "machine_id": "M019", "reason": "P(fail<=72h)=0.24, RUL~76h", "risk_prob": 0.2444595674548982, "rul_est_h": 76.10414425730627, "severity": "WARNING"}
+{"anomaly": 1, "event_time": 2141, "machine_id": "M018", "reason": "novel sensor signature, RUL~170h", "risk_prob": 0.0004602235638628668, "rul_est_h": 170.22130829560552, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2144, "machine_id": "M019", "reason": "P(fail<=72h)=0.80, RUL~62h", "risk_prob": 0.8013653372847729, "rul_est_h": 61.93846797393988, "severity": "CRITICAL"}
+{"anomaly": 1, "event_time": 2145, "machine_id": "M003", "reason": "novel sensor signature, RUL~274h", "risk_prob": 9.507438772690629e-05, "rul_est_h": 274.46525467504307, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2148, "machine_id": "M020", "reason": "novel sensor signature, RUL~126h", "risk_prob": 0.012315217989059303, "rul_est_h": 125.70277446415028, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2151, "machine_id": "M032", "reason": "novel sensor signature, RUL~96h", "risk_prob": 0.023179305927260842, "rul_est_h": 96.4643397184451, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2155, "machine_id": "M025", "reason": "novel sensor signature, RUL~263h", "risk_prob": 0.00010719761722633333, "rul_est_h": 263.22859862397473, "severity": "ANOMALY"}
+{"anomaly": 1, "event_time": 2155, "machine_id": "M019", "reason": "novel sensor signature, RUL~49h", "risk_prob": 0.1817631675288017, "rul_est_h": 49.40980690566086, "severity": "ANOMALY"}
