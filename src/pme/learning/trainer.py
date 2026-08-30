@@ -48,8 +48,10 @@ def replay_features(source: TelemetrySource, config: StreamConfig | None = None,
                     min_samples: int | None = None) -> FeatureReplay:
     """Stream ``source`` through engine + feature operator and collect every window.
 
-    ``min_samples`` defaults to the full window: training only ever sees complete
-    windows, matching the validated baseline which dropped partial ones.
+    ``min_samples`` defaults to the *serving* gate, not the full window. Training
+    on complete windows only while the daemon emits from ``min_window_samples``
+    means every partially filled window is scored by a model that never saw one —
+    the exact train/serve skew this replay design exists to avoid.
     """
     cfg = config or StreamConfig(max_out_of_orderness_h=0, allowed_lateness_h=0)
     engine = WindowingEngine(
@@ -58,7 +60,7 @@ def replay_features(source: TelemetrySource, config: StreamConfig | None = None,
         watermark=BoundedOutOfOrdernessWatermark(cfg.max_out_of_orderness_h),
         allowed_lateness=cfg.allowed_lateness_h,
     )
-    operator = FeatureOperator(min_samples=cfg.window_size_h if min_samples is None else min_samples)
+    operator = FeatureOperator(min_samples=cfg.min_window_samples if min_samples is None else min_samples)
 
     keys: list[str] = []
     times: list[int] = []
@@ -96,7 +98,8 @@ class TrainingResult:
 def train_from_stream(source: TelemetrySource, seed: int = 42,
                       config: StreamConfig | None = None) -> TrainingResult:
     """Replay the historian, join labels, fit the bundle on a machine-level holdout."""
-    replay = replay_features(source, config)
+    cfg = config or StreamConfig(max_out_of_orderness_h=0, allowed_lateness_h=0)
+    replay = replay_features(source, cfg)
     if len(replay.x) == 0:
         raise ValueError("stream replay produced no complete windows; is the history long enough?")
 
@@ -108,8 +111,9 @@ def train_from_stream(source: TelemetrySource, seed: int = 42,
     rul = labels["rul_h"].to_numpy(dtype=float)[positions]
     fail = labels["fail_within_h"].to_numpy(dtype=int)[positions]
 
-    models = MaintenanceModels(seed=seed)
+    models = MaintenanceModels(seed=seed, min_window_samples=cfg.min_window_samples)
     metrics = models.fit(replay.x, replay.machine_ids, rul, fail)
     metrics["feature_rows"] = len(replay.x)
     metrics["feature_columns"] = len(FEATURE_NAMES)
+    metrics["min_window_samples"] = cfg.min_window_samples
     return TrainingResult(models=models, metrics=metrics, replay=replay, rul_h=rul, fail_within_h=fail)
