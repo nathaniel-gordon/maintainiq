@@ -12,8 +12,12 @@ Firing rule (single-fire, lateness-delayed)::
 
 Because a window is held open for the whole allowed-lateness budget and fires
 exactly once, *any* delivery order that keeps every event inside that budget
-produces identical output to a perfectly ordered stream. That equivalence is the
-point of the design.
+produces, for each machine, the same window results in the same order as a
+perfectly ordered stream. That equivalence is the point of the design. It does
+not extend to the interleaving *between* machines: the reorder buffer breaks
+ties on arrival sequence, so two machines reporting the same hour are released
+in whichever order they were delivered. Every operator downstream keys on the
+machine, so that ordering carries no meaning.
 
 Events that fall outside the budget are not discarded quietly: they leave the
 engine as :class:`~pme.core.events.LateEvent` side-output records, counted per
