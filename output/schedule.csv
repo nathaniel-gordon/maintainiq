@@ -1,6 +1,0 @@
-machine_id,day,event_time,risk_prob,rul_est_h,expected_saving,reason
-M019,1,2159,0.2617,50.7,1272.95,risk 26% makes service cost-positive; anomalous sensor signature
-M032,1,2159,0.0207,93.5,0.0,anomalous sensor signature
-M020,1,2159,0.0024,104.5,0.0,anomalous sensor signature
-M018,2,2159,0.0002,212.5,0.0,anomalous sensor signature
-M025,2,2159,0.0001,255.2,0.0,anomalous sensor signature

@@ -45,3 +45,14 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Generated run artifacts (alerts, schedules, metrics, checkpoints, models)
+output/
+*.joblib
+*.joblib.sha256
+*.db
+*.db-wal
+*.db-shm
+
+# Local environment
+.env
