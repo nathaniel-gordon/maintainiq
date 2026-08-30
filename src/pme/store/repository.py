@@ -133,9 +133,13 @@ class MetadataStore:
             for a in alerts
         ]
         with self.db.transaction():
+            # DO NOTHING on the replay key only. "INSERT OR IGNORE" would also
+            # swallow the CHECK constraints, so an out-of-range risk probability
+            # would vanish instead of failing the run.
             self.db.executemany(
-                "INSERT OR IGNORE INTO alerts (run_id, machine_id, event_time, severity, risk_prob,"
-                " rul_est_h, anomaly, reason, correlation_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO alerts (run_id, machine_id, event_time, severity, risk_prob,"
+                " rul_est_h, anomaly, reason, correlation_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                " ON CONFLICT (run_id, machine_id, event_time, severity) DO NOTHING",
                 rows,
             )
         return len(rows)
