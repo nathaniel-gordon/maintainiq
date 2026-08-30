@@ -1,10 +1,11 @@
 """Synthetic fleet source with degradation physics and configurable delivery chaos.
 
-The physics are carried over verbatim from the validated baseline generator:
-machines accumulate wear under a diurnal load, sensors respond to wear, and a
-machine fails when wear crosses 1.0 and is then repaired. The RNG call order is
-preserved exactly, so a given seed produces byte-identical telemetry to the
-pre-refactor engine and the model metrics stay directly comparable.
+The physics are deliberately simple: machines accumulate wear under a diurnal
+load, sensors respond to wear, and a machine fails when wear crosses 1.0 and is
+then repaired. A given seed always produces the same telemetry, which is what
+makes every replay and restore comparison in the tests meaningful. It is a
+simulator, not plant data, and the failure signal is far cleaner than a real
+one.
 
 What is new is *delivery*. A historian backfill delivers the same events in
 perfect event-time order; a live broker delivers them jittered by up to

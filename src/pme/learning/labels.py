@@ -5,7 +5,7 @@ from the live stream — only from history. Keeping them here, apart from the
 feature path, is what makes "features never see the future" a structural claim
 rather than a hope.
 
-The baseline computed RUL with a per-row scan; this is the vectorised equivalent
+RUL is computed by a vectorised search rather than a per-row scan
 (``searchsorted`` over each machine's failure indices) and produces identical
 values while being O(n log k) instead of O(n * k).
 """

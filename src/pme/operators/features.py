@@ -4,10 +4,9 @@ Holds one :class:`MachineWindowState` per machine and folds each released event
 into it in O(1). The engine supplies the closing window; the operator evicts
 everything before ``window.start`` and emits the feature vector for that window.
 
-This replaces the baseline's ``pandas.rolling`` re-scan. Because the state only
-ever contains events the engine has already released — and the engine only
-releases an event once the watermark has passed it — a feature vector at event
-time ``t`` provably cannot contain data from after ``t``.
+The state only ever contains events the engine has already released, and the
+engine only releases an event once the watermark has passed it, so a feature
+vector at event time ``t`` cannot contain data from after ``t``.
 """
 from __future__ import annotations
 
@@ -52,10 +51,6 @@ class FeatureOperator(Operator):
                 samples=state.samples,
             ),
         )
-
-    def window_state(self, key: str) -> MachineWindowState | None:
-        """Expose a machine's aggregate for tests and diagnostics."""
-        return self._states.get(key)
 
     def state(self) -> dict[str, Any]:
         return {

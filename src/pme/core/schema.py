@@ -1,8 +1,13 @@
 """The feature contract shared by the streaming path and the offline trainer.
 
 There is exactly one definition of the feature vector. The trainer builds its
-design matrix by *replaying the stream through the same operator* the daemon
-uses, so train/serve skew is structurally impossible rather than merely tested.
+design matrix by replaying the stream through the same operator the daemon uses,
+so the feature *maths* cannot drift between training and serving.
+
+The emission gate can: a window is only turned into a feature row once it holds
+``MIN_WINDOW_SAMPLES`` samples, and training under one gate while serving under
+another means scoring windows the model never saw. The gate is recorded in the
+model bundle and the daemon refuses a bundle whose gate differs from its own.
 """
 from __future__ import annotations
 
@@ -20,7 +25,7 @@ MIN_WINDOW_SAMPLES: int = 20
 RISK_HORIZON_H: int = 72
 
 #: RUL regression cap. Rows at the cap are "no failure in sight" and are excluded
-#: from the regressor's training/eval sets, exactly as in the validated baseline.
+#: from the regressor's training and evaluation sets.
 RUL_CAP_H: float = 500.0
 
 

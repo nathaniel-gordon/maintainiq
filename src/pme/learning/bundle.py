@@ -83,8 +83,8 @@ class MaintenanceModels:
     ) -> dict[str, Any]:
         """Fit all three estimators on a machine-level holdout split.
 
-        Whole machines are held out (never rows), so no machine contributes to both
-        train and test — the leakage discipline the baseline established.
+        Whole machines are held out, never rows, so no machine contributes to
+        both train and test.
         """
         machines = np.array(sorted(set(machine_ids.tolist())))
         rng = np.random.default_rng(self.seed)

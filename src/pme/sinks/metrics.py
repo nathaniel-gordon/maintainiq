@@ -25,8 +25,12 @@ class MetricsSink(Sink):
     def __init__(self, path: str | Path, keep_heartbeats: int = 512) -> None:
         self.path = Path(path)
         self.keep_heartbeats = keep_heartbeats
+        #: Every Nth heartbeat is kept once the series is decimated. Recorded in
+        #: the artifact, because a series whose sampling interval silently
+        #: changes half-way through is worse than no series.
         self.windows: list[dict[str, Any]] = []
         self.heartbeats: list[dict[str, Any]] = []
+        self.heartbeat_stride = 1
         self.runtime: dict[str, Any] = {}
 
     def write(self, record: TumblingResult | Heartbeat) -> None:
@@ -61,6 +65,7 @@ class MetricsSink(Sink):
             if len(self.heartbeats) > self.keep_heartbeats:
                 # Keep every other sample: a long run stays bounded without losing shape.
                 self.heartbeats = self.heartbeats[::2]
+                self.heartbeat_stride *= 2
 
     def set_runtime(self, stats: dict[str, Any]) -> None:
         """Attach the engine's end-of-run lateness/watermark statistics."""
@@ -71,6 +76,7 @@ class MetricsSink(Sink):
         payload = {
             "runtime": self.runtime,
             "fleet_health_windows": self.windows,
+            "heartbeat_stride": self.heartbeat_stride,
             "heartbeats": self.heartbeats,
         }
         self.path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
@@ -84,12 +90,15 @@ class MetricsSink(Sink):
             "tumbling_windows": len(self.windows),
             "windows_with_failures": len(self.failure_windows()),
             "heartbeats": len(self.heartbeats),
+            "heartbeat_stride": self.heartbeat_stride,
             "path": str(self.path),
         }
 
     def state(self) -> dict[str, Any]:
-        return {"windows": self.windows, "heartbeats": self.heartbeats}
+        return {"windows": self.windows, "heartbeats": self.heartbeats,
+                "heartbeat_stride": self.heartbeat_stride}
 
     def restore(self, state: dict[str, Any]) -> None:
         self.windows = list(state["windows"])
         self.heartbeats = list(state["heartbeats"])
+        self.heartbeat_stride = int(state["heartbeat_stride"])

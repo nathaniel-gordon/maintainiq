@@ -55,7 +55,7 @@ class SlidingWindows:
     never materialises the ``size/step`` overlapping panes: it uses the single
     window that *closes* at each event time and lets the stateful operator carry
     an evicting incremental aggregate. :meth:`assign` remains the honest full
-    assignment and is what the boundary property tests exercise.
+    assignment.
     """
 
     kind = "sliding"

@@ -1,8 +1,9 @@
 """Alert sink: an append-only JSONL feed of maintenance alerts.
 
 The file is written with canonical, sorted-key JSON and no float rounding, so two
-runs that computed the same numbers produce byte-identical files. That property
-is what the checkpoint/restore test actually asserts on.
+runs that computed the same numbers produce byte-identical files. That is what
+lets the restore tests compare a resumed run against an uninterrupted one by
+comparing bytes.
 
 On restore the sink truncates the feed back to the checkpointed byte offset before
 resuming, so a crash mid-batch cannot leave duplicated or half-written alerts.
