@@ -6,11 +6,12 @@ Topology::
       (out of order)     watermarks,        incremental        micro-batched      event-time
                          lateness,          rolling stats      inference          cooldown
                          tumbling roll-ups        │                  │                 │
-                                                  └──────────────────┴────────► sink fan-out
-                                                       AlertSink · ScheduleSink · MetricsSink
+                         late side output         └──────────────────┴────────► sink fan-out
+                                                  AlertSink · ScheduleSink · MetricsSink
+                                                  LateEventSink · DatabaseSink
 
-Run it with ``python . demo`` from the project root, or drive
-:class:`pme.runtime.MaintenanceDaemon` directly.
+Run it with ``python . demo`` from the project root, ``python . serve`` for the
+HTTP surface, or drive :class:`pme.runtime.MaintenanceDaemon` directly.
 """
 
-__version__ = "2.0.0"
+__version__ = "2.2.0"
