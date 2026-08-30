@@ -52,6 +52,7 @@ ignore = [
     "PLR0912",  # branch-heavy request routing and validation are clearer flat
     "PLR0915",
     "PLR0917",  # ports take their tuning knobs positionally by long-standing convention
+    "PLR0911",  # request routing reads better as a flat sequence of matches
     "B027",     # Sink.open/close/restore are deliberately optional hooks, not abstract
 ]
 

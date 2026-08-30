@@ -7,6 +7,7 @@ Subcommands
 ``train``   fit the model bundle from a historian CSV by replaying it as a stream.
 ``run``     start the daemon against a telemetry CSV and consume it until drained.
 ``resume``  restore the daemon from its checkpoint and finish the same stream.
+``serve``   expose health, metrics and the run history over HTTP.
 
 Common options are attached to every subcommand rather than to the top-level
 parser, so ``pme run --data x --output y`` works instead of failing with
@@ -211,6 +212,13 @@ def cmd_resume(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_serve(args: argparse.Namespace) -> int:
+    from .service.app import serve  # imported lazily: the CLI does not need a socket
+
+    paths = OutputPaths.under(ensure_directory(args.output))
+    return serve(paths, host=args.host, port=args.port)
+
+
 def _add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
@@ -275,6 +283,11 @@ def build_parser() -> argparse.ArgumentParser:
         cmd.add_argument("--late-fraction", type=float, default=0.0)
         cmd.set_defaults(func=func)
 
+    serve = sub.add_parser("serve", help="serve health, metrics and run history over HTTP")
+    _add_common(serve)
+    serve.add_argument("--host", default="127.0.0.1")
+    serve.add_argument("--port", type=int, default=8080)
+    serve.set_defaults(func=cmd_serve)
     return parser
 
 
