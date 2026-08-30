@@ -1,12 +1,13 @@
 {
   "name": "maintainiq",
   "category": "ML",
-  "architecture": "streaming windowed pipeline + watermarks",
-  "interface": "daemon loop \u2014 python -m pme demo",
-  "testing": "property/invariant",
-  "demo_cmd": "python -m pme demo",
+  "architecture": "event-time streaming core (ports/adapters) + sqlite store + http service",
+  "interface": "CLI daemon and read-only HTTP API",
+  "testing": "pytest: engine, windows, store, http, end-to-end checkpoint restore",
+  "demo_cmd": "python . demo",
   "test_cmd": "python -m pytest tests -q",
   "entry_points": [
+    "__main__.py",
     "src/pme/__main__.py"
   ]
 }
