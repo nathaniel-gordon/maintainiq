@@ -8,6 +8,7 @@ Subcommands
 ``run``     start the daemon against a telemetry CSV and consume it until drained.
 ``resume``  restore the daemon from its checkpoint and finish the same stream.
 ``serve``   expose health, metrics and the run history over HTTP.
+``metrics`` print the Prometheus exposition once and exit.
 
 Common options are attached to every subcommand rather than to the top-level
 parser, so ``pme run --data x --output y`` works instead of failing with
@@ -219,6 +220,26 @@ def cmd_serve(args: argparse.Namespace) -> int:
     return serve(paths, host=args.host, port=args.port)
 
 
+def cmd_metrics(args: argparse.Namespace) -> int:
+    """Print what ``/metrics`` would serve, without binding a socket.
+
+    Useful from a cron job or a container shell. Only the database-derived gauges
+    have values here: the request counter and the latency histogram belong to the
+    serving process, and this one has answered no requests, so they render their
+    headers and no samples.
+    """
+    from .service.app import Api  # lazy for the same reason as serve
+
+    paths = OutputPaths.under(ensure_directory(args.output))
+    store = MetadataStore(open_database(paths.database))
+    try:
+        body = Api(store).dispatch("GET", "/metrics", {}, None, "cli")[1]
+        print(body if isinstance(body, str) else json.dumps(body), end="")
+    finally:
+        store.db.close()
+    return EXIT_OK
+
+
 def _add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
@@ -288,6 +309,10 @@ def build_parser() -> argparse.ArgumentParser:
     serve.add_argument("--host", default="127.0.0.1")
     serve.add_argument("--port", type=int, default=8080)
     serve.set_defaults(func=cmd_serve)
+
+    metrics = sub.add_parser("metrics", help="print the Prometheus exposition without serving")
+    _add_common(metrics)
+    metrics.set_defaults(func=cmd_metrics)
     return parser
 
 
