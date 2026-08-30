@@ -137,7 +137,7 @@ def cmd_demo(args: argparse.Namespace) -> int:
 
 
 def cmd_train(args: argparse.Namespace) -> int:
-    source = CsvTelemetrySource(args.data, preserve_file_order=False)
+    source = CsvTelemetrySource(args.data)
     trained = train_from_stream(source, seed=args.seed, config=BACKFILL_CONFIG)
     print(json.dumps(trained.metrics, indent=2, sort_keys=True))
     trained.models.save(args.out)

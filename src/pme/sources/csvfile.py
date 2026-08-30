@@ -1,9 +1,18 @@
 """CSV / historian-export source — the adapter you point at real plant data.
 
-Delivery order is taken from the file as written. Historian exports are commonly
-sorted by ingest time rather than event time, so this source does **not** sort:
-letting genuinely out-of-order rows through is the honest behaviour, and the
-engine's watermark and lateness policy are what make it safe.
+Two things about a historian export bite immediately.
+
+First, **row order is not event order**. Exports are commonly written
+machine-major (every hour of M000, then every hour of M001), so reading the file
+as a delivery order makes event time reset to zero at each machine boundary and
+the watermark discards nearly everything behind it. ``order="event_time"`` is
+therefore the default: a file is treated as a settled export unless the caller
+says otherwise. ``order="file"`` keeps the file's own order for the case where it
+genuinely reflects a broker's delivery sequence.
+
+Second, **the file is untrusted**. Columns are coerced, ranged and de-duplicated
+by :mod:`pme.sources.validation` before a single event is constructed, and the
+rejects come back on the source for the caller to persist.
 """
 from __future__ import annotations
 
@@ -11,11 +20,15 @@ from pathlib import Path
 
 import pandas as pd
 
-from ..core.events import SENSORS
+from ..errors import SourceError, ValidationError
+from ..paths import DEFAULT_MAX_INPUT_BYTES, ensure_readable_file
 from .base import MaterializedSource
 from .synthetic import events_from_frame, shuffle_delivery
+from .validation import DEFAULT_MAX_BAD_FRACTION, REQUIRED_COLUMNS, BadRow, ValidationOutcome, validate_frame
 
-REQUIRED_COLUMNS: tuple[str, ...] = ("machine_id", "hour", *SENSORS)
+#: Delivery-order policies. ``event_time`` sorts the file into event-time order;
+#: ``file`` trusts the file's own row order.
+ORDERS = ("event_time", "file")
 
 
 class CsvTelemetrySource(MaterializedSource):
@@ -24,31 +37,50 @@ class CsvTelemetrySource(MaterializedSource):
     def __init__(
         self,
         path: str | Path,
+        order: str = "event_time",
         out_of_order_delay: int = 0,
         late_fraction: float = 0.0,
         straggler_delay: tuple[int, int] = (24, 96),
         delivery_seed: int = 42,
-        preserve_file_order: bool = True,
+        duplicate_policy: str = "last",
+        max_bad_fraction: float = DEFAULT_MAX_BAD_FRACTION,
+        max_bytes: int = DEFAULT_MAX_INPUT_BYTES,
     ) -> None:
-        path = Path(path)
-        frame = pd.read_csv(path)
-        missing = [c for c in REQUIRED_COLUMNS if c not in frame.columns]
-        if missing:
-            raise ValueError(f"{path.name} is missing required columns: {missing}")
-        frame["hour"] = frame["hour"].astype(int)
-        if "load_factor" not in frame:
-            frame["load_factor"] = 1.0
-        if "failure" not in frame:
-            frame["failure"] = 0
-        frame["failure"] = frame["failure"].astype(int)
+        if order not in ORDERS:
+            raise ValidationError("unknown delivery order", order=order, allowed=list(ORDERS))
+        resolved = ensure_readable_file(path, max_bytes=max_bytes)
+        try:
+            frame = pd.read_csv(resolved)
+        except (OSError, ValueError, pd.errors.ParserError) as exc:
+            raise SourceError("telemetry file could not be parsed", path=str(resolved), detail=str(exc)) from exc
 
-        ordered = events_from_frame(frame)
-        if preserve_file_order:
-            # Rebuild delivery order from the file's own row order.
+        outcome = validate_frame(
+            frame, source=resolved.name, max_bad_fraction=max_bad_fraction, duplicate_policy=duplicate_policy
+        )
+        clean = outcome.frame
+
+        ordered = events_from_frame(clean)
+        if order == "file":
+            # Keys are unique after validation, so the file order maps one-to-one.
             index = {(e.machine_id, e.event_time): e for e in ordered}
-            delivered = [index[(str(r.machine_id), int(r.hour))] for r in frame.itertuples()]
+            delivered = [index[(str(r.machine_id), int(r.hour))] for r in clean.itertuples()]
         else:
             delivered = ordered
         delivered = shuffle_delivery(delivered, out_of_order_delay, late_fraction, straggler_delay, delivery_seed)
-        super().__init__(delivered, frame)
-        self.name = f"csv[{path.name}]"
+
+        super().__init__(delivered, clean)
+        self.path = resolved
+        self.order = order
+        self.validation = outcome
+        self.name = f"csv[{resolved.name}]"
+
+    @property
+    def rejected_rows(self) -> list[BadRow]:
+        """Rows quarantined during validation, for the caller to persist."""
+        return list(self.validation.rejected)
+
+    def validation_summary(self) -> dict[str, object]:
+        return self.validation.summary()
+
+
+__all__ = ["ORDERS", "REQUIRED_COLUMNS", "CsvTelemetrySource", "ValidationOutcome"]
