@@ -1,9 +1,4 @@
-"""Path normalisation and containment.
-
-Every path the process takes from outside goes through :mod:`pme.paths`. These
-tests pin the containment rule, because it is the only thing standing between a
-config-supplied path fragment and an arbitrary write.
-"""
+"""Path normalisation and the input-size cap."""
 from __future__ import annotations
 
 import pytest
@@ -14,7 +9,6 @@ from pme.paths import (
     ensure_directory,
     ensure_readable_file,
     normalize,
-    resolve_under,
 )
 
 
@@ -24,53 +18,6 @@ def test_normalize_returns_an_absolute_path(tmp_path):
 
 def test_normalize_removes_dot_dot_segments(tmp_path):
     assert normalize(tmp_path / "a" / ".." / "b") == normalize(tmp_path / "b")
-
-
-def test_a_relative_candidate_resolves_inside_the_root(tmp_path):
-    assert resolve_under(tmp_path, "runs/alerts.jsonl") == normalize(tmp_path / "runs" / "alerts.jsonl")
-
-
-def test_the_root_itself_is_inside_the_root(tmp_path):
-    assert resolve_under(tmp_path, ".") == normalize(tmp_path)
-
-
-@pytest.mark.parametrize(
-    "candidate",
-    [
-        "../escape.txt",
-        "runs/../../escape.txt",
-        "a/b/c/../../../../escape.txt",
-    ],
-)
-def test_traversal_out_of_the_root_is_refused(tmp_path, candidate):
-    root = tmp_path / "root"
-    root.mkdir()
-    with pytest.raises(PathError, match="escapes its permitted root"):
-        resolve_under(root, candidate)
-
-
-def test_an_absolute_candidate_outside_the_root_is_refused(tmp_path):
-    root = tmp_path / "root"
-    root.mkdir()
-    outside = tmp_path / "elsewhere" / "file.txt"
-    with pytest.raises(PathError, match="escapes its permitted root"):
-        resolve_under(root, outside)
-
-
-def test_an_absolute_candidate_inside_the_root_is_allowed(tmp_path):
-    root = tmp_path / "root"
-    root.mkdir()
-    inside = root / "nested" / "file.txt"
-    assert resolve_under(root, inside) == normalize(inside)
-
-
-def test_a_sibling_with_a_shared_prefix_does_not_count_as_inside(tmp_path):
-    """``/data`` and ``/data-backup`` share a prefix but not a parent."""
-    root = tmp_path / "data"
-    root.mkdir()
-    (tmp_path / "data-backup").mkdir()
-    with pytest.raises(PathError):
-        resolve_under(root, tmp_path / "data-backup" / "x.txt")
 
 
 def test_ensure_directory_creates_missing_parents(tmp_path):

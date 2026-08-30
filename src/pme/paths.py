@@ -1,11 +1,15 @@
-"""Path normalisation and containment.
+"""Path normalisation and input limits.
 
 Every path the process takes from a caller — ``--data``, ``--output``,
-``--models``, a database location — goes through here first. As a local CLI the
-risk is modest, but the same code is reachable from the HTTP service's
-configuration and from a container entrypoint, where an unnormalised path is a
-traversal bug. Normalising once, in one place, keeps that from ever being a
-question.
+``--models`` — goes through here before it is opened or created, so ``..``
+segments and ``~`` are resolved once, in one place, and the checks that follow
+see an absolute path.
+
+There is deliberately no traversal-containment helper here. Nothing in this
+system takes a path *fragment* from an untrusted caller: the HTTP surface is
+read-only and exposes no path parameter, and the CLI arguments come from the
+operator's own shell, which already runs with the operator's own rights. A
+containment check against a root nobody supplies would be decoration.
 """
 from __future__ import annotations
 
@@ -25,19 +29,6 @@ def normalize(path: str | Path) -> Path:
         return Path(path).expanduser().resolve()
     except (OSError, RuntimeError) as exc:  # pragma: no cover - platform dependent
         raise PathError("path could not be resolved", path=str(path), reason=str(exc)) from exc
-
-
-def resolve_under(root: str | Path, candidate: str | Path) -> Path:
-    """Resolve ``candidate`` and require that it stays inside ``root``.
-
-    Used wherever a path component comes from outside the process (a request
-    parameter, a config file) rather than from the operator's own shell.
-    """
-    base = normalize(root)
-    target = normalize(base / candidate) if not Path(candidate).is_absolute() else normalize(candidate)
-    if target != base and base not in target.parents:
-        raise PathError("path escapes its permitted root", root=str(base), path=str(target))
-    return target
 
 
 def ensure_directory(path: str | Path) -> Path:
@@ -69,5 +60,4 @@ __all__ = [
     "ensure_directory",
     "ensure_readable_file",
     "normalize",
-    "resolve_under",
 ]
