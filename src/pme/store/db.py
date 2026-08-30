@@ -287,13 +287,17 @@ class Database:
             for version, name, statements in MIGRATIONS:
                 if version in done:
                     continue
-                with self.transaction() as tx:
-                    for statement in statements:
-                        tx.execute(statement)
-                    tx.execute(
-                        "INSERT INTO schema_migrations (version, name, applied_at) VALUES (?, ?, ?)",
-                        (version, name, utc_now()),
-                    )
+                try:
+                    with self.transaction() as tx:
+                        for statement in statements:
+                            tx.execute(statement)
+                        tx.execute(
+                            "INSERT INTO schema_migrations (version, name, applied_at) VALUES (?, ?, ?)",
+                            (version, name, utc_now()),
+                        )
+                except sqlite3.Error as exc:
+                    raise StorageError("migration failed and was rolled back",
+                                       version=version, migration=name, detail=str(exc)) from exc
                 applied.append(version)
                 log.info("migration applied", version=version, migration=name)
             return applied
