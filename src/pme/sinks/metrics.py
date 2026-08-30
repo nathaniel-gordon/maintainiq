@@ -49,7 +49,10 @@ class MetricsSink(Sink):
                     "events_consumed": record.events_consumed,
                     "watermark": record.watermark,
                     "max_event_time": record.max_event_time,
-                    "watermark_lag": record.max_event_time - record.watermark,
+                    "watermark_lag": (
+                        None if record.watermark is None or record.max_event_time is None
+                        else record.max_event_time - record.watermark
+                    ),
                     "reorder_buffer": record.reorder_buffer,
                     "dropped_late": record.dropped_late,
                     "alerts_emitted": record.alerts_emitted,

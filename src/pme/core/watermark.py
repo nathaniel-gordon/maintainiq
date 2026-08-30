@@ -16,7 +16,7 @@ class BoundedOutOfOrdernessWatermark:
 
     The clamp is not cosmetic: a single very old straggler would otherwise drag
     the watermark backwards, re-opening windows that already fired and destroying
-    replay determinism. Monotonicity is asserted by a dedicated property test.
+    replay determinism.
     """
 
     __slots__ = ("_lag_max", "_lag_sum", "_max_seen", "_ticks", "_watermark", "max_out_of_orderness")
@@ -38,6 +38,23 @@ class BoundedOutOfOrdernessWatermark:
     @property
     def max_seen(self) -> int:
         return self._max_seen
+
+    @property
+    def is_closed(self) -> bool:
+        """True once :meth:`close` has pushed the watermark past every event."""
+        return self._watermark == MAX_EVENT_TIME
+
+    @property
+    def effective(self) -> int | None:
+        """Watermark clamped to the newest event seen; ``None`` before the first.
+
+        Reporting the raw value after drain means reporting 2**62, and reporting it
+        before the first event means reporting -2**62. Neither is a time anyone
+        wants in a metrics file.
+        """
+        if self._max_seen == MIN_EVENT_TIME:
+            return None
+        return min(self._watermark, self._max_seen)
 
     def observe(self, event_time: int) -> int:
         """Fold an event time in and return the (never-decreasing) watermark."""

@@ -13,7 +13,11 @@ Firing rule (single-fire, lateness-delayed)::
 Because a window is held open for the whole allowed-lateness budget and fires
 exactly once, *any* delivery order that keeps every event inside that budget
 produces identical output to a perfectly ordered stream. That equivalence is the
-point of the design and is asserted directly by the property suite.
+point of the design.
+
+Events that fall outside the budget are not discarded quietly: they leave the
+engine as :class:`~pme.core.events.LateEvent` side-output records, counted per
+machine, so a run that is losing data says so.
 """
 from __future__ import annotations
 
@@ -21,7 +25,7 @@ import heapq
 from typing import Any
 
 from .assigners import SlidingWindows, TumblingWindows
-from .events import MAX_EVENT_TIME, SlidingTrigger, TelemetryEvent, TumblingResult, Window
+from .events import LateEvent, SlidingTrigger, TelemetryEvent, TumblingResult, Window
 from .watermark import BoundedOutOfOrdernessWatermark
 
 #: Upper edges (in event-time units) of the lateness histogram buckets.
@@ -87,6 +91,7 @@ class WindowingEngine:
         self.lateness_sum = 0
         self.lateness_max = 0
         self.lateness_hist = [0] * (len(LATENESS_BUCKETS) + 1)
+        self.late_by_machine: dict[str, int] = {}
 
     # ------------------------------------------------------------------ timing
 
@@ -102,26 +107,29 @@ class WindowingEngine:
 
     # ------------------------------------------------------------------ ingest
 
-    def push(self, event: TelemetryEvent) -> list[SlidingTrigger | TumblingResult]:
-        """Admit one (possibly out-of-order) event and return whatever fired."""
+    def push(self, event: TelemetryEvent) -> list[SlidingTrigger | TumblingResult | LateEvent]:
+        """Admit one (possibly out-of-order) event and return whatever fired.
+
+        An event the frontier has already passed comes straight back out as a
+        :class:`LateEvent` rather than vanishing into a counter.
+        """
         frontier = self.release_frontier
         if event.event_time <= frontier:
-            self._record_late(event, frontier)
-            return []
+            return [self._record_late(event, frontier)]
         heapq.heappush(self._buffer, (event.event_time, self._seq, event))
         self._seq += 1
         self.watermark.observe(event.event_time)
         return self._advance()
 
-    def close(self) -> list[SlidingTrigger | TumblingResult]:
+    def close(self) -> list[SlidingTrigger | TumblingResult | LateEvent]:
         """Drain: the source is exhausted, so every remaining window may fire."""
         self.watermark.close()
         return self._advance()
 
     # ------------------------------------------------------------------ firing
 
-    def _advance(self) -> list[SlidingTrigger | TumblingResult]:
-        out: list[SlidingTrigger | TumblingResult] = []
+    def _advance(self) -> list[SlidingTrigger | TumblingResult | LateEvent]:
+        out: list[SlidingTrigger | TumblingResult | LateEvent] = []
         wm = self.watermark.current
         frontier = self.release_frontier
         while self._buffer and self._buffer[0][0] <= frontier:
@@ -142,7 +150,7 @@ class WindowingEngine:
             heapq.heappush(self._pending, (window.end, ev.machine_id, window.start))
         acc.add(ev.readings[self.vibration_index], ev.load_factor, ev.failure)
 
-    def _fire_tumbling(self, out: list[SlidingTrigger | TumblingResult], wm: int) -> None:
+    def _fire_tumbling(self, out: list[SlidingTrigger | TumblingResult | LateEvent], wm: int) -> None:
         while self._pending and self._pending[0][0] + self.allowed_lateness <= wm:
             end, key, start = heapq.heappop(self._pending)
             acc = self._acc.pop((key, start))
@@ -161,30 +169,58 @@ class WindowingEngine:
 
     # ---------------------------------------------------------------- lateness
 
-    def _record_late(self, event: TelemetryEvent, frontier: int) -> None:
+    def _record_late(self, event: TelemetryEvent, frontier: int) -> LateEvent:
         lateness = frontier - event.event_time + 1
         self.late_dropped += 1
         self.lateness_sum += lateness
         self.lateness_max = max(self.lateness_max, lateness)
+        self.late_by_machine[event.machine_id] = self.late_by_machine.get(event.machine_id, 0) + 1
         for i, edge in enumerate(LATENESS_BUCKETS):
             if lateness <= edge:
                 self.lateness_hist[i] += 1
-                return
-        self.lateness_hist[-1] += 1
+                break
+        else:
+            self.lateness_hist[-1] += 1
+        return LateEvent(
+            key=event.machine_id,
+            event_time=event.event_time,
+            watermark=self.watermark.current,
+            lateness_h=lateness,
+            event=event,
+        )
+
+    @property
+    def drop_rate(self) -> float:
+        """Share of admitted events the lateness policy refused."""
+        total = self.released + self.late_dropped
+        return self.late_dropped / total if total else 0.0
+
+    def lateness_histogram(self) -> list[dict[str, Any]]:
+        """Buckets as an ordered list, upper edge first, open-ended bucket last.
+
+        A dict keyed by "<=16h" sorts as a string once the metrics file is written
+        with sorted keys, which put "<=128h" ahead of "<=16h".
+        """
+        edges: list[int | None] = [*LATENESS_BUCKETS, None]
+        return [{"upper_h": edge, "count": count}
+                for edge, count in zip(edges, self.lateness_hist, strict=True)]
 
     def stats(self) -> dict[str, Any]:
         """Late-arrival and watermark telemetry — the observability the batch job never had."""
-        total = self.released + self.late_dropped
-        labels = [f"<={e}h" for e in LATENESS_BUCKETS] + [f">{LATENESS_BUCKETS[-1]}h"]
         return {
             "events_released": self.released,
             "events_dropped_late": self.late_dropped,
-            "drop_rate": round(self.late_dropped / total, 6) if total else 0.0,
+            "drop_rate": round(self.drop_rate, 6),
             "lateness_mean_h": round(self.lateness_sum / self.late_dropped, 3) if self.late_dropped else 0.0,
             "lateness_max_h": self.lateness_max,
-            "lateness_histogram": dict(zip(labels, self.lateness_hist, strict=True)),
+            "lateness_histogram": self.lateness_histogram(),
+            "dropped_by_machine": dict(sorted(self.late_by_machine.items())),
             "reorder_buffer_size": len(self._buffer),
-            "watermark": self.watermark.current if self.watermark.current != MAX_EVENT_TIME else "closed",
+            # Always an int, with a separate flag for the drained state: this used
+            # to become the string "closed" after drain, so the last record of the
+            # metrics file had a different schema from every record before it.
+            "watermark": self.watermark.effective,
+            "stream_closed": self.watermark.is_closed,
             **self.watermark.lag_stats(),
         }
 
@@ -202,6 +238,7 @@ class WindowingEngine:
             "lateness_sum": self.lateness_sum,
             "lateness_max": self.lateness_max,
             "lateness_hist": list(self.lateness_hist),
+            "late_by_machine": dict(sorted(self.late_by_machine.items())),
         }
 
     def restore(self, state: dict[str, Any]) -> None:
@@ -217,3 +254,4 @@ class WindowingEngine:
         self.lateness_sum = int(state["lateness_sum"])
         self.lateness_max = int(state["lateness_max"])
         self.lateness_hist = [int(v) for v in state["lateness_hist"]]
+        self.late_by_machine = {str(k): int(v) for k, v in state["late_by_machine"].items()}

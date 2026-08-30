@@ -101,12 +101,39 @@ class TumblingResult:
 
 
 @dataclass(frozen=True, slots=True)
+class LateEvent:
+    """An event the watermark had already passed: the engine's side output.
+
+    Dropping these silently is how a stream processor loses three quarters of a
+    file and still reports success, so they leave the engine as records like any
+    other result and are written to a sink.
+    """
+
+    key: str
+    event_time: int
+    watermark: int
+    lateness_h: int
+    event: TelemetryEvent
+
+    def to_json_obj(self) -> dict[str, Any]:
+        return {
+            "machine_id": self.key,
+            "event_time": self.event_time,
+            "watermark": self.watermark,
+            "lateness_h": self.lateness_h,
+            "readings": list(self.event.readings),
+            "load_factor": self.event.load_factor,
+        }
+
+
+@dataclass(frozen=True, slots=True)
 class FeatureRecord:
     """Model-ready feature vector for one machine at one event time.
 
     ``values`` is aligned with :func:`pme.core.schema.feature_names`. It is built
-    only from events whose event time lies inside ``window`` — never from the
-    future — which is what the no-leakage property test verifies.
+    only from events whose event time lies inside ``window``, never from the
+    future: the operator sees an event only after the engine has released it,
+    and the engine releases nothing the watermark has not already passed.
     """
 
     key: str
@@ -137,8 +164,8 @@ class Heartbeat:
     """
 
     events_consumed: int
-    watermark: int
-    max_event_time: int
+    watermark: int | None
+    max_event_time: int | None
     reorder_buffer: int
     dropped_late: int
     alerts_emitted: int

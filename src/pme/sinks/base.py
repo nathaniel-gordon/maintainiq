@@ -1,9 +1,10 @@
 """The sink port: where results leave the pipeline.
 
-Sinks declare which record types they accept so the daemon can fan a single
-output stream out to all of them without any sink knowing another exists. Adding
-a new destination (a message bus, a CMMS work-order API) means one new class and
-one config entry — the pipeline itself does not change.
+Sinks declare which record types they accept and the daemon dispatches on that
+declaration, so a single output stream fans out to all of them without any sink
+knowing another exists. Adding a destination (a message bus, a CMMS work-order
+API) means one new class listing the records it wants; the pipeline does not
+change and neither does the daemon.
 """
 from __future__ import annotations
 
@@ -16,7 +17,8 @@ class Sink(ABC):
 
     name: str = "sink"
 
-    #: Record classes this sink consumes; the daemon uses it for dispatch.
+    #: Record classes this sink consumes. The daemon builds its dispatch table
+    #: from these, so a sink that declares nothing is never written to.
     accepts: tuple[type, ...] = ()
 
     def open(self) -> None:
@@ -25,6 +27,9 @@ class Sink(ABC):
     @abstractmethod
     def write(self, record: Any) -> None:
         """Consume one record of an accepted type."""
+
+    def flush(self) -> None:
+        """Push buffered records to their destination. Called at every barrier."""
 
     def close(self) -> None:
         """Release resources and materialise any deferred output."""
