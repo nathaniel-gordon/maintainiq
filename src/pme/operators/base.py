@@ -7,7 +7,8 @@ checkpoint writer — the contract that makes mid-stream restore possible.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 
 class Operator(ABC):

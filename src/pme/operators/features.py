@@ -11,7 +11,8 @@ time ``t`` provably cannot contain data from after ``t``.
 """
 from __future__ import annotations
 
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 from ..core.events import FeatureRecord, SlidingTrigger
 from ..core.rolling import MachineWindowState

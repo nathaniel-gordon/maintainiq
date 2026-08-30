@@ -101,15 +101,15 @@ def train_from_stream(source: TelemetrySource, seed: int = 42,
         raise ValueError("stream replay produced no complete windows; is the history long enough?")
 
     labels = build_labels(source.history())
-    index = {(str(m), int(h)): i for i, (m, h) in enumerate(zip(labels["machine_id"], labels["hour"]))}
+    index = {(str(m), int(h)): i for i, (m, h) in enumerate(zip(labels["machine_id"], labels["hour"], strict=True))}
     positions = np.array(
-        [index[(str(m), int(t))] for m, t in zip(replay.machine_ids, replay.event_times)], dtype=np.int64
+        [index[(str(m), int(t))] for m, t in zip(replay.machine_ids, replay.event_times, strict=True)], dtype=np.int64
     )
     rul = labels["rul_h"].to_numpy(dtype=float)[positions]
     fail = labels["fail_within_h"].to_numpy(dtype=int)[positions]
 
     models = MaintenanceModels(seed=seed)
     metrics = models.fit(replay.x, replay.machine_ids, rul, fail)
-    metrics["feature_rows"] = int(len(replay.x))
+    metrics["feature_rows"] = len(replay.x)
     metrics["feature_columns"] = len(FEATURE_NAMES)
     return TrainingResult(models=models, metrics=metrics, replay=replay, rul_h=rul, fail_within_h=fail)

@@ -126,7 +126,7 @@ def cmd_demo(args: argparse.Namespace) -> int:
     stream_chart(report, daemon.schedule_sink.latest, daemon.metrics_sink.heartbeats, chart_path)
     run_report(report, metrics, daemon.schedule_sink.latest, report_path, baseline=BASELINE_METRICS)
 
-    print("")
+    print()
     print("Top service orders:")
     for order in report.orders[:5]:
         print(f"  day {order.day}  {order.machine_id}  risk={order.risk_prob:.3f}  "

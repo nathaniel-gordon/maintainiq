@@ -16,9 +16,10 @@ the machine is.
 from __future__ import annotations
 
 import time
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any
 
 from ..core.assigners import SlidingWindows, TumblingWindows
 from ..core.engine import WindowingEngine

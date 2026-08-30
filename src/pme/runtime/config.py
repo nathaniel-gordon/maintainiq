@@ -67,7 +67,7 @@ class OutputPaths:
     checkpoint: Path = field(default=Path())
 
     @staticmethod
-    def under(root: str | Path, prefix: str = "") -> "OutputPaths":
+    def under(root: str | Path, prefix: str = "") -> OutputPaths:
         root = Path(root)
         return OutputPaths(
             root=root,

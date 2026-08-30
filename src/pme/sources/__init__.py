@@ -3,4 +3,4 @@ from .base import MaterializedSource, TelemetrySource
 from .csvfile import CsvTelemetrySource
 from .synthetic import SyntheticFleetSource
 
-__all__ = ["TelemetrySource", "MaterializedSource", "SyntheticFleetSource", "CsvTelemetrySource"]
+__all__ = ["CsvTelemetrySource", "MaterializedSource", "SyntheticFleetSource", "TelemetrySource"]

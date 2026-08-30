@@ -42,7 +42,7 @@ class MachineWindowState:
     evicting is O(n_sensors) per evicted event, amortised O(1) per event overall.
     """
 
-    __slots__ = ("_times", "_rows", "_loads", "_s", "_q", "_p", "_ts", "_tq", "_load_sum", "_origin")
+    __slots__ = ("_load_sum", "_loads", "_origin", "_p", "_q", "_rows", "_s", "_times", "_tq", "_ts")
 
     def __init__(self) -> None:
         self._times: deque[int] = deque()
@@ -103,7 +103,7 @@ class MachineWindowState:
         self._p = [0.0] * _N_SENSORS
         self._ts = 0.0
         self._tq = 0.0
-        for t, row in zip(self._times, self._rows):
+        for t, row in zip(self._times, self._rows, strict=True):
             rel = float(t - new_origin)
             for k in range(_N_SENSORS):
                 self._p[k] += rel * row[k]
@@ -171,7 +171,7 @@ class MachineWindowState:
         }
 
     @staticmethod
-    def from_state(state: dict[str, Any]) -> "MachineWindowState":
+    def from_state(state: dict[str, Any]) -> MachineWindowState:
         obj = MachineWindowState()
         obj._times = deque(int(t) for t in state["times"])
         obj._rows = deque(tuple(float(v) for v in r) for r in state["rows"])

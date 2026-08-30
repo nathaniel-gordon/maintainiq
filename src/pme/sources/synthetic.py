@@ -87,7 +87,7 @@ def shuffle_delivery(
     n = len(events)
     jitter = rng.integers(0, out_of_order_delay + 1, size=n) if out_of_order_delay > 0 else np.zeros(n, dtype=np.int64)
     if late_fraction > 0.0:
-        n_late = int(round(n * late_fraction))
+        n_late = round(n * late_fraction)
         if n_late > 0:
             picks = rng.choice(n, size=n_late, replace=False)
             jitter[picks] = rng.integers(straggler_delay[0], straggler_delay[1] + 1, size=n_late)

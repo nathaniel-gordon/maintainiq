@@ -13,10 +13,10 @@ from typing import Any
 import matplotlib
 
 matplotlib.use("Agg")  # headless: the daemon may run on a server with no display
-import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.pyplot as plt
 
-from ..core.events import ScoredRecord  # noqa: E402
-from ..runtime.daemon import RunReport  # noqa: E402
+from ..core.events import ScoredRecord
+from ..runtime.daemon import RunReport
 
 _SEVERITY_ORDER = ("CRITICAL", "WARNING", "ANOMALY")
 
@@ -134,8 +134,8 @@ def run_report(
         "",
         "## Fleet state at end of stream",
         "",
-        f"Machines scored: **{len(latest)}** · High risk (>50%): **{len(high)}** · "
-        f"Watchlist (20–50%): **{len(watch)}** · Anomalies: **{len(anomalies)}**",
+        (f"Machines scored: **{len(latest)}** · High risk (>50%): **{len(high)}** · "
+         f"Watchlist (20-50%): **{len(watch)}** · Anomalies: **{len(anomalies)}**"),
         "",
         _markdown_table(
             ["machine_id", "event_time", "risk_prob", "rul_est_h", "anomaly"],

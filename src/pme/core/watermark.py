@@ -19,7 +19,7 @@ class BoundedOutOfOrdernessWatermark:
     replay determinism. Monotonicity is asserted by a dedicated property test.
     """
 
-    __slots__ = ("max_out_of_orderness", "_max_seen", "_watermark", "_lag_sum", "_lag_max", "_ticks")
+    __slots__ = ("_lag_max", "_lag_sum", "_max_seen", "_ticks", "_watermark", "max_out_of_orderness")
 
     def __init__(self, max_out_of_orderness: int) -> None:
         if max_out_of_orderness < 0:
@@ -41,16 +41,13 @@ class BoundedOutOfOrdernessWatermark:
 
     def observe(self, event_time: int) -> int:
         """Fold an event time in and return the (never-decreasing) watermark."""
-        if event_time > self._max_seen:
-            self._max_seen = event_time
+        self._max_seen = max(self._max_seen, event_time)
         candidate = self._max_seen - self.max_out_of_orderness
-        if candidate > self._watermark:
-            self._watermark = candidate
+        self._watermark = max(self._watermark, candidate)
         self._ticks += 1
         lag = self._max_seen - self._watermark
         self._lag_sum += lag
-        if lag > self._lag_max:
-            self._lag_max = lag
+        self._lag_max = max(self._lag_max, lag)
         return self._watermark
 
     def close(self) -> int:

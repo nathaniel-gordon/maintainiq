@@ -4,10 +4,10 @@ from .labels import build_labels
 from .trainer import FeatureReplay, TrainingResult, replay_features, train_from_stream
 
 __all__ = [
+    "FeatureReplay",
     "MaintenanceModels",
+    "TrainingResult",
     "build_labels",
     "replay_features",
     "train_from_stream",
-    "FeatureReplay",
-    "TrainingResult",
 ]

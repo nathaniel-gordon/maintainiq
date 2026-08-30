@@ -4,4 +4,4 @@ from .base import Operator
 from .features import FeatureOperator
 from .scoring import ScoringOperator
 
-__all__ = ["Operator", "FeatureOperator", "ScoringOperator", "AlertOperator"]
+__all__ = ["AlertOperator", "FeatureOperator", "Operator", "ScoringOperator"]

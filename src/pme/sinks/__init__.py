@@ -5,11 +5,11 @@ from .metrics import MetricsSink
 from .schedule import CostModel, MaintenanceScheduleSink, ServiceOrder, build_schedule
 
 __all__ = [
-    "Sink",
     "AlertSink",
-    "MetricsSink",
-    "MaintenanceScheduleSink",
     "CostModel",
+    "MaintenanceScheduleSink",
+    "MetricsSink",
     "ServiceOrder",
+    "Sink",
     "build_schedule",
 ]

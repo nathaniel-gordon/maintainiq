@@ -49,7 +49,7 @@ class TelemetryEvent:
         return [self.machine_id, self.event_time, list(self.readings), self.load_factor, self.failure]
 
     @staticmethod
-    def from_row(row: list[Any]) -> "TelemetryEvent":
+    def from_row(row: list[Any]) -> TelemetryEvent:
         return TelemetryEvent(row[0], int(row[1]), tuple(float(v) for v in row[2]), float(row[3]), int(row[4]))
 
 

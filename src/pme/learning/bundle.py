@@ -95,5 +95,5 @@ class MaintenanceModels:
         joblib.dump(self, path)
 
     @staticmethod
-    def load(path: str | Path) -> "MaintenanceModels":
+    def load(path: str | Path) -> MaintenanceModels:
         return joblib.load(Path(path))

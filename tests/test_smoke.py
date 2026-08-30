@@ -1,6 +1,7 @@
 """Smoke test for maintainiq."""
 from pme.sources.synthetic import SyntheticFleetSource
 
+
 def test_smoke():
     source = SyntheticFleetSource(seed=42, n_machines=2, hours=24)
     records = list(source.emit())

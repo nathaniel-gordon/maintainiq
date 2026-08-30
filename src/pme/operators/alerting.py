@@ -9,7 +9,8 @@ history in ten seconds must produce exactly the alerts the live run would have.
 """
 from __future__ import annotations
 
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 from ..core.events import Alert, ScoredRecord
 from .base import Operator

@@ -6,7 +6,8 @@ cursor-addressable so the daemon can checkpoint its read position and resume.
 """
 from __future__ import annotations
 
-from typing import Iterator, Protocol, runtime_checkable
+from collections.abc import Iterator
+from typing import Protocol, runtime_checkable
 
 import pandas as pd
 

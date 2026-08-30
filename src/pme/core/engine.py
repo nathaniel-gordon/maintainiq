@@ -31,7 +31,7 @@ LATENESS_BUCKETS: tuple[int, ...] = (1, 2, 4, 8, 16, 32, 64, 128)
 class _TumblingAccumulator:
     """Running roll-up for one (machine, tumbling window) pair."""
 
-    __slots__ = ("samples", "failures", "load_sum", "vib_sum", "vib_max")
+    __slots__ = ("failures", "load_sum", "samples", "vib_max", "vib_sum")
 
     def __init__(self) -> None:
         self.samples = 0
@@ -45,14 +45,13 @@ class _TumblingAccumulator:
         self.failures += failure
         self.load_sum += load
         self.vib_sum += vibration
-        if vibration > self.vib_max:
-            self.vib_max = vibration
+        self.vib_max = max(self.vib_max, vibration)
 
     def state(self) -> list[Any]:
         return [self.samples, self.failures, self.load_sum, self.vib_sum, self.vib_max]
 
     @staticmethod
-    def from_state(row: list[Any]) -> "_TumblingAccumulator":
+    def from_state(row: list[Any]) -> _TumblingAccumulator:
         acc = _TumblingAccumulator()
         acc.samples, acc.failures = int(row[0]), int(row[1])
         acc.load_sum, acc.vib_sum, acc.vib_max = float(row[2]), float(row[3]), float(row[4])
@@ -166,8 +165,7 @@ class WindowingEngine:
         lateness = frontier - event.event_time + 1
         self.late_dropped += 1
         self.lateness_sum += lateness
-        if lateness > self.lateness_max:
-            self.lateness_max = lateness
+        self.lateness_max = max(self.lateness_max, lateness)
         for i, edge in enumerate(LATENESS_BUCKETS):
             if lateness <= edge:
                 self.lateness_hist[i] += 1
@@ -184,7 +182,7 @@ class WindowingEngine:
             "drop_rate": round(self.late_dropped / total, 6) if total else 0.0,
             "lateness_mean_h": round(self.lateness_sum / self.late_dropped, 3) if self.late_dropped else 0.0,
             "lateness_max_h": self.lateness_max,
-            "lateness_histogram": dict(zip(labels, self.lateness_hist)),
+            "lateness_histogram": dict(zip(labels, self.lateness_hist, strict=True)),
             "reorder_buffer_size": len(self._buffer),
             "watermark": self.watermark.current if self.watermark.current != MAX_EVENT_TIME else "closed",
             **self.watermark.lag_stats(),

@@ -3,4 +3,4 @@ from .checkpoint import CheckpointStore
 from .config import OutputPaths, StreamConfig
 from .daemon import MaintenanceDaemon, RunReport
 
-__all__ = ["StreamConfig", "OutputPaths", "CheckpointStore", "MaintenanceDaemon", "RunReport"]
+__all__ = ["CheckpointStore", "MaintenanceDaemon", "OutputPaths", "RunReport", "StreamConfig"]
