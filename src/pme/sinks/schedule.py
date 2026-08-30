@@ -1,11 +1,12 @@
-"""Maintenance-schedule sink: the cost-based scheduler, preserved and made streaming.
+"""Maintenance-schedule sink: greedy cost-ranked crew assignment.
 
-The economics are carried over from the validated engine unchanged — a service is
-only booked when ``risk x unplanned_cost > planned_cost``, and crews are a hard
-capacity constraint. What changed is the input: instead of a batch "final state"
-frame, the sink tracks the newest scored window per machine as the stream flows
-and re-optimises whenever asked. A plant can therefore pull an up-to-date work
-order at any point in the stream, not only after the batch job finishes.
+A service is booked only when ``risk x unplanned_cost > planned_cost``, and crews
+are a hard capacity constraint. The sink tracks the newest scored window per
+machine as the stream flows, so :meth:`MaintenanceScheduleSink.current_schedule`
+answers "what would we do right now" at any point in the run, not only at the end.
+
+This is a greedy ranking, not an optimiser: candidates are sorted by expected
+saving and filled into crew slots until the horizon runs out.
 """
 from __future__ import annotations
 
@@ -14,32 +15,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from ..core.costs import CostModel
 from ..core.events import ScoredRecord
 from .base import Sink
-
-
-@dataclass(frozen=True, slots=True)
-class CostModel:
-    """Plant economics. Frozen so a schedule can never be produced under mutated costs."""
-
-    planned_maintenance: float = 1_200.0  # cost of a planned service
-    unplanned_failure: float = 8_500.0  # parts + emergency labour
-    downtime_per_hour: float = 350.0
-    unplanned_downtime_h: float = 18.0
-    planned_downtime_h: float = 4.0
-
-    def expected_saving(self, risk_prob: float) -> float:
-        """Expected net saving of servicing now versus running to probable failure."""
-        unplanned = self.unplanned_failure + self.downtime_per_hour * self.unplanned_downtime_h
-        planned = self.planned_maintenance + self.downtime_per_hour * self.planned_downtime_h
-        return risk_prob * unplanned - planned
-
-    @property
-    def breakeven_risk(self) -> float:
-        """Risk probability at which servicing becomes cost-neutral."""
-        unplanned = self.unplanned_failure + self.downtime_per_hour * self.unplanned_downtime_h
-        planned = self.planned_maintenance + self.downtime_per_hour * self.planned_downtime_h
-        return planned / unplanned
 
 
 @dataclass(frozen=True, slots=True)
@@ -53,8 +31,8 @@ class ServiceOrder:
     reason: str
 
 
-#: Priority bonus applied to an anomalous machine so a novel failure signature can
-#: earn a crew slot even when its modelled risk is still low.
+#: Default priority bonus for an anomalous machine, overridable through
+#: :class:`~pme.runtime.config.StreamConfig`.
 ANOMALY_PRIORITY_BONUS = 500.0
 
 
@@ -63,11 +41,12 @@ def build_schedule(
     costs: CostModel | None = None,
     crews_per_day: int = 3,
     horizon_days: int = 7,
+    anomaly_bonus: float = ANOMALY_PRIORITY_BONUS,
 ) -> list[ServiceOrder]:
     """Assign cost-positive (or anomalous) machines to crew slots, best first.
 
-    Ordering is by ``(-priority, machine_id)`` so the plan is reproducible; the
-    baseline relied on an unstable pandas sort for ties.
+    Ordering is by ``(-priority, machine_id)``, so ties break on the machine id
+    and the plan is reproducible across runs.
     """
     costs = costs or CostModel()
     candidates: list[tuple[float, str, ScoredRecord, float]] = []
@@ -75,7 +54,7 @@ def build_schedule(
         saving = costs.expected_saving(rec.risk_prob)
         if saving <= 0.0 and rec.anomaly != 1:
             continue
-        priority = saving + rec.anomaly * ANOMALY_PRIORITY_BONUS
+        priority = saving + rec.anomaly * anomaly_bonus
         candidates.append((priority, machine_id, rec, saving))
     candidates.sort(key=lambda c: (-c[0], c[1]))
 
@@ -115,11 +94,13 @@ class MaintenanceScheduleSink(Sink):
         costs: CostModel | None = None,
         crews_per_day: int = 3,
         horizon_days: int = 7,
+        anomaly_bonus: float = ANOMALY_PRIORITY_BONUS,
     ) -> None:
         self.path = Path(path)
         self.costs = costs or CostModel()
         self.crews_per_day = crews_per_day
         self.horizon_days = horizon_days
+        self.anomaly_bonus = anomaly_bonus
         self.latest: dict[str, ScoredRecord] = {}
         self.orders: list[ServiceOrder] = []
         self.updates = 0
@@ -133,7 +114,8 @@ class MaintenanceScheduleSink(Sink):
 
     def current_schedule(self) -> list[ServiceOrder]:
         """Re-optimise from the newest state seen so far — callable mid-stream."""
-        return build_schedule(self.latest, self.costs, self.crews_per_day, self.horizon_days)
+        return build_schedule(self.latest, self.costs, self.crews_per_day, self.horizon_days,
+                              self.anomaly_bonus)
 
     def close(self) -> None:
         self.orders = self.current_schedule()

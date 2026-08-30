@@ -15,7 +15,8 @@ from typing import Any
 from ..core.events import Alert, ScoredRecord
 from .base import Operator
 
-#: Risk thresholds, checked highest-first. Mirrors the baseline report's bands.
+#: Default risk bands, checked highest-first. Overridable through
+#: :class:`~pme.runtime.config.StreamConfig` so a run records the bands it used.
 CRITICAL_RISK = 0.5
 WARNING_RISK = 0.2
 
@@ -25,10 +26,15 @@ class AlertOperator(Operator):
 
     name = "alerting"
 
-    def __init__(self, cooldown_h: int = 24) -> None:
+    def __init__(self, cooldown_h: int = 24, critical_risk: float = CRITICAL_RISK,
+                 warning_risk: float = WARNING_RISK) -> None:
         if cooldown_h < 0:
             raise ValueError("cooldown_h must be >= 0")
+        if not 0.0 <= warning_risk <= critical_risk <= 1.0:
+            raise ValueError("risk bands must satisfy 0 <= warning <= critical <= 1")
         self.cooldown_h = cooldown_h
+        self.critical_risk = critical_risk
+        self.warning_risk = warning_risk
         self._last: dict[str, int] = {}
         self.emitted = 0
         self.suppressed = 0
@@ -56,11 +62,10 @@ class AlertOperator(Operator):
             ),
         )
 
-    @staticmethod
-    def _classify(record: ScoredRecord) -> tuple[str | None, str]:
-        if record.risk_prob > CRITICAL_RISK:
+    def _classify(self, record: ScoredRecord) -> tuple[str | None, str]:
+        if record.risk_prob > self.critical_risk:
             return "CRITICAL", f"P(fail<=72h)={record.risk_prob:.2f}, RUL~{record.rul_est_h:.0f}h"
-        if record.risk_prob > WARNING_RISK:
+        if record.risk_prob > self.warning_risk:
             return "WARNING", f"P(fail<=72h)={record.risk_prob:.2f}, RUL~{record.rul_est_h:.0f}h"
         if record.anomaly == 1:
             return "ANOMALY", f"novel sensor signature, RUL~{record.rul_est_h:.0f}h"
@@ -69,6 +74,8 @@ class AlertOperator(Operator):
     def state(self) -> dict[str, Any]:
         return {
             "cooldown_h": self.cooldown_h,
+            "critical_risk": self.critical_risk,
+            "warning_risk": self.warning_risk,
             "last": dict(sorted(self._last.items())),
             "emitted": self.emitted,
             "suppressed": self.suppressed,
@@ -76,6 +83,8 @@ class AlertOperator(Operator):
 
     def restore(self, state: dict[str, Any]) -> None:
         self.cooldown_h = int(state["cooldown_h"])
+        self.critical_risk = float(state["critical_risk"])
+        self.warning_risk = float(state["warning_risk"])
         self._last = {k: int(v) for k, v in state["last"].items()}
         self.emitted = int(state["emitted"])
         self.suppressed = int(state["suppressed"])
