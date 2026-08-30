@@ -1,9 +1,9 @@
 """O(1) incremental event-time window aggregate (mean / sample std / OLS slope).
 
-The validated baseline computed these with ``pandas.rolling`` over the whole
-history — an O(n * window) re-scan that a daemon on an unbounded stream cannot
-afford. This state object produces *numerically the same* statistics from running
-sums that are updated once per admitted event and once per evicted event.
+A ``pandas.rolling`` re-scan over the whole history is O(n * window), which a
+daemon on an unbounded stream cannot afford. This state object computes the same
+statistics from running sums updated once per admitted event and once per evicted
+event.
 
 Given a window holding pairs ``(t_i, y_i)``:
 
@@ -27,8 +27,8 @@ from typing import Any
 from .events import SENSORS
 
 #: Rebase the per-machine time origin once relative timestamps exceed this.
-#: 2**20 hours is ~120 years of stream, so rebasing is rare in practice but the
-#: code path is exercised by a dedicated test.
+#: 2**20 hours is ~120 years of stream, so nothing shipped here reaches it; the
+#: limit is lowered directly in the tests that exercise the rebase path.
 REBASE_LIMIT: int = 1 << 20
 
 _N_SENSORS = len(SENSORS)
@@ -42,7 +42,7 @@ class MachineWindowState:
     evicting is O(n_sensors) per evicted event, amortised O(1) per event overall.
     """
 
-    __slots__ = ("_load_sum", "_loads", "_origin", "_p", "_q", "_rows", "_s", "_times", "_tq", "_ts")
+    __slots__ = ("_loads", "_origin", "_p", "_q", "_rows", "_s", "_times", "_tq", "_ts")
 
     def __init__(self) -> None:
         self._times: deque[int] = deque()
@@ -53,7 +53,6 @@ class MachineWindowState:
         self._p = [0.0] * _N_SENSORS
         self._ts = 0.0
         self._tq = 0.0
-        self._load_sum = 0.0
         self._origin: int | None = None
 
     # ---------------------------------------------------------------- mutation
@@ -75,14 +74,13 @@ class MachineWindowState:
             self._p[k] += rel * v
         self._ts += rel
         self._tq += rel * rel
-        self._load_sum += load_factor
 
     def evict_before(self, start: int) -> None:
         """Drop every buffered event with ``event_time < start`` (window scope)."""
         while self._times and self._times[0] < start:
             t = self._times.popleft()
             row = self._rows.popleft()
-            load = self._loads.popleft()
+            self._loads.popleft()
             rel = float(t - self._origin)  # type: ignore[operator]
             for k in range(_N_SENSORS):
                 v = row[k]
@@ -91,7 +89,6 @@ class MachineWindowState:
                 self._p[k] -= rel * v
             self._ts -= rel
             self._tq -= rel * rel
-            self._load_sum -= load
 
     def _rebase(self, new_origin: int) -> None:
         """Recompute the running sums against a fresh time origin.
@@ -166,7 +163,6 @@ class MachineWindowState:
             "p": list(self._p),
             "ts": self._ts,
             "tq": self._tq,
-            "load_sum": self._load_sum,
             "origin": self._origin,
         }
 
@@ -181,6 +177,5 @@ class MachineWindowState:
         obj._p = [float(v) for v in state["p"]]
         obj._ts = float(state["ts"])
         obj._tq = float(state["tq"])
-        obj._load_sum = float(state["load_sum"])
         obj._origin = None if state["origin"] is None else int(state["origin"])
         return obj
