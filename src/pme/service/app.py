@@ -361,6 +361,13 @@ class _Handler(BaseHTTPRequestHandler):
                      duration_ms=round((time.monotonic() - started) * 1000, 2),
                      authenticated=bool(self.headers.get("Authorization")))
 
+    def finish(self) -> None:
+        """Release this thread's sqlite handle once the client connection ends."""
+        try:
+            super().finish()
+        finally:
+            self.api.store.db.close_thread_connection()
+
     def log_message(self, fmt: str, *args: Any) -> None:
         """Silence the stdlib's stderr logging; requests are logged structurally."""
 

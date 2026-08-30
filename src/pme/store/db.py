@@ -188,15 +188,33 @@ class Database:
         conn.execute(f"PRAGMA busy_timeout = {int(self.timeout * 1000)}")
         return conn
 
-    def close(self) -> None:
-        """Close this thread's connection (and the shared in-memory one, if any)."""
+    def close_thread_connection(self) -> None:
+        """Close the connection the calling thread opened, if it opened one.
+
+        The HTTP server gives each client connection its own thread, and a thread
+        that has answered a request holds a sqlite handle until the process ends.
+        Releasing it at the end of the connection bounds open handles by
+        concurrency instead of by total requests served. In-memory databases are
+        untouched: their single connection is shared and closing it would discard
+        the database.
+        """
         conn: sqlite3.Connection | None = getattr(self._local, "conn", None)
         if conn is not None:
             conn.close()
             self._local.conn = None
+
+    def close(self) -> None:
+        """Close this thread's connection (and the shared in-memory one, if any)."""
+        self.close_thread_connection()
         if self._memory_conn is not None:
             self._memory_conn.close()
             self._memory_conn = None
+
+    def __enter__(self) -> Database:
+        return self
+
+    def __exit__(self, *exc: object) -> None:
+        self.close()
 
     # ---------------------------------------------------------------- access
 

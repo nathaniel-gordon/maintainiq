@@ -22,6 +22,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from collections.abc import Iterator
+from contextlib import contextmanager
 from pathlib import Path
 
 from . import __version__
@@ -69,6 +71,21 @@ def _store(args: argparse.Namespace, paths: OutputPaths) -> MetadataStore | None
     return MetadataStore(open_database(paths.database))
 
 
+@contextmanager
+def closing_store(store: MetadataStore | None) -> Iterator[None]:
+    """Release the sqlite handle when a subcommand is done with it.
+
+    Long-lived processes get this from ``serve``; the one-shot subcommands used
+    to leak the connection until interpreter shutdown, which shows up as a stray
+    WAL file next to the database and as ResourceWarnings under pytest.
+    """
+    try:
+        yield
+    finally:
+        if store is not None:
+            store.db.close()
+
+
 def cmd_demo(args: argparse.Namespace) -> int:
     out = ensure_directory(args.output)
     machines, hours = args.machines, 24 * args.days
@@ -98,7 +115,8 @@ def cmd_demo(args: argparse.Namespace) -> int:
     checkpoint_every = max(1, len(live) // 4)
     store = _store(args, live_paths)
     daemon = MaintenanceDaemon(live, trained.models, _live_config(args, checkpoint_every), live_paths, store=store)
-    report = daemon.run()
+    with closing_store(store):
+        report = daemon.run()
     alert_bytes = live_paths.alerts.read_bytes()
     stats = report.engine_stats
     print(f"      consumed {report.events_consumed:,} | released {stats['events_released']:,} | "
@@ -117,7 +135,8 @@ def cmd_demo(args: argparse.Namespace) -> int:
     )
     part1 = MaintenanceDaemon(crashed, trained.models, _live_config(args, checkpoint_every, cut), replay_paths,
                               store=_store(args, replay_paths))
-    first = part1.run()
+    with closing_store(part1.store):
+        first = part1.run()
     print(f"      run stopped after {first.events_consumed:,} events; checkpoint written")
 
     resumed_source = SyntheticFleetSource(
@@ -126,9 +145,10 @@ def cmd_demo(args: argparse.Namespace) -> int:
     )
     part2 = MaintenanceDaemon(resumed_source, trained.models, _live_config(args, checkpoint_every), replay_paths,
                               store=_store(args, replay_paths))
-    if not part2.restore_latest():
-        raise RuntimeError("expected a checkpoint to resume from")
-    second = part2.run()
+    with closing_store(part2.store):
+        if not part2.restore_latest():
+            raise RuntimeError("expected a checkpoint to resume from")
+        second = part2.run()
     identical = replay_paths.alerts.read_bytes() == alert_bytes
     print(f"      resumed at event {first.events_consumed:,}, finished {second.events_consumed:,}")
     print(f"      alert feed byte-identical to the uninterrupted run: {identical} "
@@ -199,17 +219,19 @@ def _daemon_from_args(args: argparse.Namespace, checkpoint_every: int) -> Mainte
 
 def cmd_run(args: argparse.Namespace) -> int:
     daemon = _daemon_from_args(args, args.checkpoint_every)
-    print(json.dumps(daemon.run().to_dict(), indent=2, sort_keys=True, allow_nan=False))
+    with closing_store(daemon.store):
+        print(json.dumps(daemon.run().to_dict(), indent=2, sort_keys=True, allow_nan=False))
     return EXIT_OK
 
 
 def cmd_resume(args: argparse.Namespace) -> int:
     daemon = _daemon_from_args(args, args.checkpoint_every)
-    if not daemon.restore_latest():
-        print(f"no checkpoint at {daemon.checkpoints.path}", file=sys.stderr)
-        return 2
-    print(f"restored at event {daemon.events_consumed:,}; continuing", file=sys.stderr)
-    print(json.dumps(daemon.run().to_dict(), indent=2, sort_keys=True, allow_nan=False))
+    with closing_store(daemon.store):
+        if not daemon.restore_latest():
+            print(f"no checkpoint at {daemon.checkpoints.path}", file=sys.stderr)
+            return 2
+        print(f"restored at event {daemon.events_consumed:,}; continuing", file=sys.stderr)
+        print(json.dumps(daemon.run().to_dict(), indent=2, sort_keys=True, allow_nan=False))
     return EXIT_OK
 
 
