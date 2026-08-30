@@ -38,6 +38,9 @@ pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-q --strict-markers"
 markers = ["slow: end-to-end runs over the full seeded fleet"]
+# A leaked sqlite handle is a bug, not a note: the HTTP server opens one per
+# thread and used to keep every one of them.
+filterwarnings = ["error::ResourceWarning"]
 
 [tool.ruff]
 line-length = 120

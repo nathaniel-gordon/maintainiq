@@ -6,6 +6,7 @@ streams.
 """
 from __future__ import annotations
 
+from collections.abc import Iterator
 from dataclasses import replace
 
 import pytest
@@ -58,11 +59,12 @@ def ordered_source() -> SyntheticFleetSource:
 
 
 @pytest.fixture
-def store() -> MetadataStore:
-    """An in-memory metadata store, migrated and ready."""
+def store() -> Iterator[MetadataStore]:
+    """An in-memory metadata store, migrated and ready, closed on teardown."""
     db = Database(MEMORY)
     db.migrate()
-    return MetadataStore(db)
+    yield MetadataStore(db)
+    db.close()
 
 
 def make_source(jitter: int = 0, late_fraction: float = 0.0, delivery_seed: int = SEED + 1,

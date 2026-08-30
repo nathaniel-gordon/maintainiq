@@ -1,6 +1,8 @@
 """Metadata store: migrations, constraints, transactions and pagination."""
 from __future__ import annotations
 
+from collections.abc import Iterator
+
 import pytest
 
 from pme.errors import StorageError, ValidationError
@@ -9,12 +11,13 @@ from pme.store.repository import MAX_PAGE, MetadataStore
 
 
 @pytest.fixture
-def store() -> MetadataStore:
+def store() -> Iterator[MetadataStore]:
     db = Database(MEMORY)
     db.migrate()
     s = MetadataStore(db)
     s.start_run("run-1", "csv[t.csv]", 100, "fp-abc", {"window_size_h": 24})
-    return s
+    yield s
+    db.close()
 
 
 def _alert(machine: str, t: int, severity: str = "WARNING", risk: float = 0.3) -> dict:
@@ -23,22 +26,22 @@ def _alert(machine: str, t: int, severity: str = "WARNING", risk: float = 0.3) -
 
 
 def test_migrations_apply_once_and_are_recorded(tmp_path):
-    db = Database(tmp_path / "meta.db")
-    assert db.migrate() == [v for v, _, _ in MIGRATIONS]
-    assert db.migrate() == []
-    assert db.applied_versions() == [v for v, _, _ in MIGRATIONS]
+    with Database(tmp_path / "meta.db") as db:
+        assert db.migrate() == [v for v, _, _ in MIGRATIONS]
+        assert db.migrate() == []
+        assert db.applied_versions() == [v for v, _, _ in MIGRATIONS]
     assert MIGRATIONS[-1][0] == SCHEMA_VERSION
 
 
 def test_migration_two_adds_the_correlation_column(tmp_path):
-    db = open_database(tmp_path / "meta.db")
-    cols = {r["name"] for r in db.query("PRAGMA table_info(runs)")}
+    with open_database(tmp_path / "meta.db") as db:
+        cols = {r["name"] for r in db.query("PRAGMA table_info(runs)")}
     assert "correlation_id" in cols
 
 
 def test_wal_is_enabled_on_a_file_database(tmp_path):
-    db = open_database(tmp_path / "meta.db")
-    row = db.query_one("PRAGMA journal_mode")
+    with open_database(tmp_path / "meta.db") as db:
+        row = db.query_one("PRAGMA journal_mode")
     assert row is not None and row[0].lower() == "wal"
 
 
