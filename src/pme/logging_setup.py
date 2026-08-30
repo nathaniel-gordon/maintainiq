@@ -102,6 +102,48 @@ class PlainFormatter(logging.Formatter):
         return f"{record.levelname:<7} {prefix}{record.getMessage()}{suffix}"
 
 
+def _safe_fields(fields: dict[str, Any]) -> dict[str, Any]:
+    """Rename any field that would collide with a built-in ``LogRecord`` attribute."""
+    return {(f"field_{k}" if k in _STANDARD_ATTRS else k): v for k, v in fields.items()}
+
+
+class StructuredLogger:
+    """Thin wrapper so call sites read ``log.info("thing happened", count=3)``.
+
+    The stdlib logger only accepts extras through an ``extra=`` mapping, which is
+    noisy at every call site and silently explodes on a key that collides with a
+    ``LogRecord`` attribute. This normalises both.
+    """
+
+    __slots__ = ("_logger",)
+
+    def __init__(self, logger: logging.Logger) -> None:
+        self._logger = logger
+
+    @property
+    def stdlib(self) -> logging.Logger:
+        return self._logger
+
+    def _emit(self, level: int, msg: str, fields: dict[str, Any], exc_info: bool = False) -> None:
+        if self._logger.isEnabledFor(level):
+            self._logger.log(level, msg, extra=_safe_fields(fields), exc_info=exc_info)
+
+    def debug(self, msg: str, **fields: Any) -> None:
+        self._emit(logging.DEBUG, msg, fields)
+
+    def info(self, msg: str, **fields: Any) -> None:
+        self._emit(logging.INFO, msg, fields)
+
+    def warning(self, msg: str, **fields: Any) -> None:
+        self._emit(logging.WARNING, msg, fields)
+
+    def error(self, msg: str, **fields: Any) -> None:
+        self._emit(logging.ERROR, msg, fields)
+
+    def exception(self, msg: str, **fields: Any) -> None:
+        self._emit(logging.ERROR, msg, fields, exc_info=True)
+
+
 def configure_logging(level: str = "INFO", fmt: str = "json", stream: Any = None) -> None:
     """Install the root handler. Idempotent: repeated calls replace the handler.
 
@@ -117,9 +159,9 @@ def configure_logging(level: str = "INFO", fmt: str = "json", stream: Any = None
     root.propagate = False
 
 
-def get_logger(name: str) -> logging.Logger:
+def get_logger(name: str) -> StructuredLogger:
     """Logger under the ``pme`` root, so one call configures every module."""
-    return logging.getLogger(name if name.startswith("pme") else f"pme.{name}")
+    return StructuredLogger(logging.getLogger(name if name.startswith("pme") else f"pme.{name}"))
 
 
 def log_level_from_env(default: str = "INFO") -> str:
@@ -129,6 +171,7 @@ def log_level_from_env(default: str = "INFO") -> str:
 __all__ = [
     "JsonFormatter",
     "PlainFormatter",
+    "StructuredLogger",
     "configure_logging",
     "correlation_id",
     "correlation_scope",
