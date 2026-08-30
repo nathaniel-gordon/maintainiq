@@ -44,6 +44,7 @@ from ..errors import (
     ValidationError,
 )
 from ..logging_setup import configure_logging, correlation_scope, get_logger, log_level_from_env, new_correlation_id
+from ..metrics import REGISTRY, Registry, escape_label
 from ..runtime.config import OutputPaths
 from ..store.db import SCHEMA_VERSION, open_database
 from ..store.repository import MetadataStore
@@ -100,14 +101,81 @@ def _str_param(params: dict[str, list[str]], name: str, max_len: int = 128) -> s
     return raw
 
 
+#: Sub-resources of a run that get their own route label.
+_RUN_SUBRESOURCES = frozenset({"alerts", "machines", "late-events"})
+
+
+def route_of(path: str) -> str:
+    """Collapse a request path onto a route template.
+
+    Metric labels must have bounded cardinality. Labelling by raw path would
+    create a new time series per run id, so the id is replaced by a placeholder
+    and anything unrecognised collapses to ``other``.
+    """
+    if path in ("/healthz", "/readyz", "/metrics"):
+        return path
+    if not path.startswith(API_PREFIX):
+        return "other"
+    segments = [s for s in path[len(API_PREFIX):].split("/") if s]
+    if not segments:
+        return API_PREFIX
+    if segments[0] == "quarantine" and len(segments) == 1:
+        return f"{API_PREFIX}/quarantine"
+    if segments[0] == "runs":
+        if len(segments) == 1:
+            return f"{API_PREFIX}/runs"
+        if len(segments) == 2:
+            return f"{API_PREFIX}/runs/{{run_id}}"
+        if len(segments) == 3 and segments[2] in _RUN_SUBRESOURCES:
+            return f"{API_PREFIX}/runs/{{run_id}}/{segments[2]}"
+    return "other"
+
+
 class Api:
     """Routing and handlers, independent of the HTTP plumbing so it can be tested."""
 
-    def __init__(self, store: MetadataStore, token: str = "", limiter: RateLimiter | None = None) -> None:
+    def __init__(self, store: MetadataStore, token: str = "", limiter: RateLimiter | None = None,
+                 registry: Registry | None = None) -> None:
         self.store = store
         self.token = token
         self.limiter = limiter or RateLimiter()
         self.started_at = time.time()
+        self.registry = registry or REGISTRY
+        self.requests = self.registry.counter(
+            "pme_http_requests_total",
+            "HTTP requests answered, by method, route template and status.",
+            ("method", "route", "status"),
+        )
+        self.latency = self.registry.histogram(
+            "pme_http_request_duration_seconds",
+            "Wall-clock time spent handling a request, by route template.",
+            ("route",),
+        )
+
+    # ------------------------------------------------------------- entry point
+
+    def handle(self, method: str, path: str, params: dict[str, list[str]],
+               auth_header: str | None, client: str) -> tuple[int, dict[str, Any] | str, str]:
+        """Dispatch one request, turn any failure into a response, and record it.
+
+        The HTTP plumbing calls this rather than :meth:`dispatch` so that the
+        counter and the latency histogram cover rejected requests too — a service
+        whose metrics only describe its successes is the wrong way round.
+        """
+        route = route_of(path)
+        started = time.perf_counter()
+        try:
+            status, body, content_type = self.dispatch(method, path, params, auth_header, client)
+        except PmeError as exc:
+            status, body, content_type = exc.http_status, {"error": exc.to_dict()}, "application/json"
+            log.warning("request rejected", path=path, code=exc.code, status=status)
+        except Exception as exc:  # pragma: no cover - defensive
+            status, content_type = 500, "application/json"
+            body = {"error": {"code": "internal_error", "message": "unhandled error"}}
+            log.exception("request failed", path=path, detail=str(exc))
+        self.latency.observe(time.perf_counter() - started, route=route)
+        self.requests.inc(method=method, route=route, status=str(status))
+        return status, body, content_type
 
     # ------------------------------------------------------------------ auth
 
@@ -213,18 +281,23 @@ class Api:
             "# TYPE pme_uptime_seconds gauge",
             f"pme_uptime_seconds {time.time() - self.started_at:.3f}",
         ]
-        for table, count in sorted(totals.items()):
-            lines += [
-                f"# HELP pme_rows_total Rows stored in the {table} table.",
-                "# TYPE pme_rows_total gauge",
-                f'pme_rows_total{{table="{table}"}} {count}',
-            ]
+        # One HELP and one TYPE line per metric name, then every labelled sample.
+        # Repeating the header for each table made the exposition unparseable:
+        # a scraper rejects a second HELP line for a name it has already seen.
+        lines += [
+            "# HELP pme_rows_total Rows stored in each table of the metadata database.",
+            "# TYPE pme_rows_total gauge",
+            *(f'pme_rows_total{{table="{table}"}} {count}' for table, count in sorted(totals.items())),
+        ]
         if latest.items:
             run = latest.items[0]
             consumed = int(run["events_consumed"])
             dropped = int(run["events_dropped_late"])
             rate = dropped / consumed if consumed else 0.0
-            labels = f'run_id="{run["run_id"]}"'
+            # The run id can be chosen by the operator (``--run-id``), so it is
+            # caller text and must be escaped: an unescaped newline in a label
+            # would let it append arbitrary metric lines to the exposition.
+            labels = 'run_id="' + escape_label(str(run["run_id"])) + '"'
             lines += [
                 "# HELP pme_last_run_events_consumed Events consumed by the most recent run.",
                 "# TYPE pme_last_run_events_consumed gauge",
@@ -239,6 +312,9 @@ class Api:
                 "# TYPE pme_last_run_alerts_emitted gauge",
                 f"pme_last_run_alerts_emitted{{{labels}}} {int(run['alerts_emitted'])}",
             ]
+        rendered = self.registry.render()
+        if rendered:
+            lines.append(rendered)
         return "\n".join(lines) + "\n"
 
 
@@ -265,20 +341,11 @@ class _Handler(BaseHTTPRequestHandler):
         cid = incoming[:64] if incoming else new_correlation_id()
         started = time.monotonic()
         with correlation_scope(cid):
-            try:
-                status, payload, content_type = self.api.dispatch(
-                    self.command, parsed.path, params,
-                    self.headers.get("Authorization"),
-                    self.client_address[0] if self.client_address else "unknown",
-                )
-            except PmeError as exc:
-                status, payload, content_type = exc.http_status, {"error": exc.to_dict()}, "application/json"
-                log.warning("request rejected", path=parsed.path, code=exc.code, status=status)
-            except Exception as exc:  # pragma: no cover - defensive
-                status, content_type = 500, "application/json"
-                payload = {"error": {"code": "internal_error", "message": "unhandled error"}}
-                log.exception("request failed", path=parsed.path, detail=str(exc))
-
+            status, payload, content_type = self.api.handle(
+                self.command, parsed.path, params,
+                self.headers.get("Authorization"),
+                self.client_address[0] if self.client_address else "unknown",
+            )
             raw = (payload if isinstance(payload, str) else json.dumps(payload, sort_keys=True, default=str))
             encoded = raw.encode("utf-8")
             self.send_response(status)
@@ -326,4 +393,4 @@ def serve(paths: OutputPaths, host: str = "127.0.0.1", port: int = 8080) -> int:
     return EXIT_OK
 
 
-__all__ = ["API_PREFIX", "Api", "RateLimiter", "build_server", "serve"]
+__all__ = ["API_PREFIX", "Api", "RateLimiter", "build_server", "route_of", "serve"]
