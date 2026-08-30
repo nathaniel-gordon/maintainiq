@@ -1,9 +1,8 @@
 """Run reporting: a markdown fleet/stream report and a four-panel chart.
 
 Two of the four panels — watermark lag and the lateness histogram — describe the
-*stream*, not the fleet. They are the diagnostics an operator needs to decide
-whether the configured out-of-orderness and lateness budgets match reality, and
-they simply did not exist in the batch engine.
+*stream*, not the fleet: they are the diagnostics an operator needs to decide
+whether the configured out-of-orderness and lateness budgets match reality.
 """
 from __future__ import annotations
 
@@ -47,17 +46,19 @@ def stream_chart(report: RunReport, latest: dict[str, ScoredRecord], heartbeats:
     axes[0][1].set_title("Highest-risk machines")
     axes[0][1].set_xlabel("P(failure <= 72h)")
 
-    if heartbeats:
-        xs = [h["events_consumed"] for h in heartbeats]
-        axes[1][0].plot(xs, [h["watermark_lag"] for h in heartbeats], color="#228833", label="watermark lag (h)")
-        axes[1][0].plot(xs, [h["reorder_buffer"] for h in heartbeats], color="#aa3377", label="reorder buffer")
+    beats = [h for h in heartbeats if h.get("watermark_lag") is not None]
+    if beats:
+        xs = [h["events_consumed"] for h in beats]
+        axes[1][0].plot(xs, [h["watermark_lag"] for h in beats], color="#228833", label="watermark lag (h)")
+        axes[1][0].plot(xs, [h["reorder_buffer"] for h in beats], color="#aa3377", label="reorder buffer")
         axes[1][0].legend(loc="upper right", fontsize=8)
     axes[1][0].set_title("Watermark lag & reorder-buffer depth")
     axes[1][0].set_xlabel("events consumed")
 
-    hist = report.engine_stats.get("lateness_histogram", {})
-    if hist and sum(hist.values()) > 0:
-        axes[1][1].bar(list(hist.keys()), list(hist.values()), color="#ccbb44", edgecolor="white")
+    buckets = report.engine_stats.get("lateness_histogram", [])
+    if buckets and sum(b["count"] for b in buckets) > 0:
+        labels = [f"<={b['upper_h']}h" if b["upper_h"] is not None else "more" for b in buckets]
+        axes[1][1].bar(labels, [b["count"] for b in buckets], color="#ccbb44", edgecolor="white")
         axes[1][1].tick_params(axis="x", rotation=45, labelsize=8)
     else:
         axes[1][1].text(0.5, 0.5, "no events dropped as late", ha="center", va="center")
@@ -74,7 +75,6 @@ def run_report(
     metrics: dict[str, Any],
     latest: dict[str, ScoredRecord],
     path: Path,
-    baseline: dict[str, Any] | None = None,
 ) -> str:
     """Write the markdown run report and return its text."""
     stats = report.engine_stats
@@ -90,15 +90,17 @@ def run_report(
         "## Model quality (machine-level holdout)",
         "",
         _markdown_table(
-            ["metric", "value"] + (["baseline (batch engine)"] if baseline else []),
+            ["metric", "value"],
             [
-                ["risk AUC", metrics.get("risk_auc")] + ([baseline.get("risk_auc")] if baseline else []),
-                ["RUL MAE (h)", metrics.get("rul_mae_h")] + ([baseline.get("rul_mae_h")] if baseline else []),
-                ["train / test machines", f"{metrics.get('train_machines')} / {metrics.get('test_machines')}"]
-                + ([""] if baseline else []),
-                ["feature rows", metrics.get("feature_rows")] + ([""] if baseline else []),
+                ["risk AUC", metrics.get("risk_auc")],
+                ["RUL MAE (h)", metrics.get("rul_mae_h")],
+                ["train / test machines", f"{metrics.get('train_machines')} / {metrics.get('test_machines')}"],
+                ["feature rows", metrics.get("feature_rows")],
+                ["window gate (min samples)", metrics.get("min_window_samples")],
             ],
         ),
+        "",
+        "Fitted on synthetic telemetry from this repository's wear simulator, not on plant data.",
         "",
         "## Stream health",
         "",
@@ -109,6 +111,7 @@ def run_report(
                 ["events released by watermark", stats["events_released"]],
                 ["events dropped as too-late", stats["events_dropped_late"]],
                 ["late-drop rate", stats["drop_rate"]],
+                ["late events in side output", report.sink_summaries.get("late", {}).get("late_events", 0)],
                 ["max observed lateness (h)", stats["lateness_max_h"]],
                 ["mean watermark lag (h)", stats["watermark_lag_mean"]],
                 ["max watermark lag (h)", stats["watermark_lag_max"]],
