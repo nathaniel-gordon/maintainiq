@@ -1,0 +1,22 @@
+# One service: the daemon's HTTP surface over a persistent data volume.
+#
+# `pme run` and `pme resume` are one-shot commands against the same image and
+# the same volume, e.g.
+#   docker compose run --rm api python -m pme run --data /data/telemetry.csv \
+#       --models /data/models.joblib --output /data
+services:
+  api:
+    build: .
+    image: maintainiq:local
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - maintainiq-data:/data
+    environment:
+      # Leave unset to serve /api/v1 without auth. See .env.example.
+      PME_API_TOKEN: "${PME_API_TOKEN:-}"
+      PME_LOG_LEVEL: "${PME_LOG_LEVEL:-INFO}"
+    restart: unless-stopped
+
+volumes:
+  maintainiq-data:

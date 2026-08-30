@@ -1,0 +1,13 @@
+.git
+.github
+output
+tests
+docs
+*.md
+.mypy_cache
+.pytest_cache
+.ruff_cache
+__pycache__
+**/__pycache__
+*.db
+*.joblib
