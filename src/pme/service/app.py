@@ -348,6 +348,12 @@ class _Handler(BaseHTTPRequestHandler):
             )
             raw = (payload if isinstance(payload, str) else json.dumps(payload, sort_keys=True, default=str))
             encoded = raw.encode("utf-8")
+            # Log before the body goes out, so the record exists by the time the
+            # client sees the response. The Authorization header is never logged,
+            # only whether one was sent.
+            log.info("request", method=self.command, path=parsed.path, status=status,
+                     duration_ms=round((time.monotonic() - started) * 1000, 2),
+                     authenticated=bool(self.headers.get("Authorization")))
             self.send_response(status)
             self.send_header("Content-Type", content_type)
             self.send_header("Content-Length", str(len(encoded)))
@@ -356,10 +362,6 @@ class _Handler(BaseHTTPRequestHandler):
             self.end_headers()
             if body:
                 self.wfile.write(encoded)
-            # The Authorization header is never logged, only whether one was sent.
-            log.info("request", method=self.command, path=parsed.path, status=status,
-                     duration_ms=round((time.monotonic() - started) * 1000, 2),
-                     authenticated=bool(self.headers.get("Authorization")))
 
     def finish(self) -> None:
         """Release this thread's sqlite handle once the client connection ends."""
