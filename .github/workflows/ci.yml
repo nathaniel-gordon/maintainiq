@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff mypy numpy pandas scikit-learn matplotlib joblib
+      - run: ruff check .
+      - run: mypy
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt pytest pytest-cov
+      - run: python -m pytest --cov=src/pme --cov-report=term --cov-fail-under=90
+      # The demo is the cheapest full-system check: train, stream, crash,
+      # resume, report. It must exit 0 and must not dirty the tree.
+      - run: python . demo
+      - run: git diff --exit-code
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t maintainiq:ci .
+      - name: container answers its probes
+        run: |
+          docker run -d --name pme -p 8080:8080 maintainiq:ci
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8080/healthz > /dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8080/healthz
+          curl -fsS http://127.0.0.1:8080/readyz
+          curl -fsS http://127.0.0.1:8080/metrics | head -n 5
+          docker rm -f pme
