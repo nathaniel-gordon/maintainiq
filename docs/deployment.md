@@ -32,8 +32,8 @@ Documented in `.env.example`; compose reads a `.env` beside `compose.yaml`.
 | `PME_API_TOKEN` | empty | Bearer token required on `/api/v1`. Empty means the API is open — acceptable only on a loopback bind. Generate one: `python -c "import secrets; print(secrets.token_urlsafe(32))"` |
 | `PME_LOG_LEVEL` | `INFO` | `DEBUG`, `INFO`, `WARNING` or `ERROR` for every entry point. |
 
-The container also sets `PME_LOG_FORMAT` implicitly by passing
-`--log-format json` on the command line, so container stdout is one JSON
+The container's CMD passes `--log-format json` on the command line (there is
+no environment variable for the format), so container stdout is one JSON
 object per line with a correlation id on every record.
 
 ## Migrations
