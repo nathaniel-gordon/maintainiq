@@ -163,6 +163,29 @@ docker compose up            # serves on 127.0.0.1:8080 over a named volume
 
 State lives under `/data`; the container runs as a non-root user.
 
+## Observability
+
+Logs are structured JSON (`--log-format json`, the container default): one
+object per line, level, logger, message, and a correlation id that ties every
+record of a run or request together. The bearer token never appears in a log
+line — there is a regression test for that.
+
+Metrics are Prometheus text at `GET /metrics`, or one-shot via
+`python . metrics` for a process without the server. The series that actually
+emit:
+
+| series | type |
+| --- | --- |
+| `pme_build_info{schema_version}` | gauge |
+| `pme_uptime_seconds` | gauge |
+| `pme_rows_total{table}` | gauge, rows per database table |
+| `pme_http_requests_total{method,route,status}` | counter |
+| `pme_http_request_duration_seconds{route}` | histogram |
+
+Liveness is `/healthz` (touches nothing), readiness is `/readyz` (opens the
+database, checks the schema version, 503 otherwise). The Dockerfile's
+HEALTHCHECK uses `/healthz`.
+
 ## Tests
 
 ```bash
@@ -175,10 +198,23 @@ round-trips and every refusal path, telemetry validation, the SQLite store's
 constraints and pagination, the HTTP routes including auth and rate limiting,
 and end-to-end restore reproducing an uninterrupted run byte for byte.
 
+Measured on this machine (Windows, Python 3.14):
+
+* `python -m pytest` — **395 passed** in ~73 s
+* `python -m pytest --cov=src/pme --cov-report=term` — **96 %** line coverage
+  (2792 statements, 99 missed)
+* `python -m ruff check .` and `python -m mypy` — clean over 46 source files
+
+CI (`.github/workflows/ci.yml`) runs the same three commands, then `python .
+demo` with a clean-tree check, then builds the image and curls its probes.
+
 ```bash
 python -m ruff check .
 python -m mypy
 ```
+
+Model-quality numbers are **not benchmarked** beyond what `demo` prints for
+its own synthetic fleet; no figure from the simulator transfers to real data.
 
 ## Limitations
 
@@ -194,6 +230,26 @@ python -m mypy
   machine ids, and checkpoint size grows with fleet size.
 * `allowed_lateness_h` is a firing delay only (see above).
 * Nothing is deployed; there is no live URL and no production usage.
+
+## Roadmap
+
+Roughly in the order they earn their keep:
+
+* Real allowed-lateness semantics — keep a fired window's state alive and emit
+  versioned updates instead of treating lateness as a firing delay.
+* An unbounded source port (drop `__len__`, add periodic checkpoint triggers)
+  so a long-lived feed is expressible.
+* State eviction for machines that go quiet, to bound keyed-operator state.
+* Probability calibration with a reliability check in the report.
+
+## Contributing, security, license
+
+Setup, architecture notes and coding standards are in
+[CONTRIBUTING.md](CONTRIBUTING.md). Vulnerability reporting and the honest
+security boundary are in [SECURITY.md](SECURITY.md). Deployment (single Docker
+host, and why) is in [docs/deployment.md](docs/deployment.md); the decisions
+behind the design are recorded in [docs/adr/](docs/adr/). MIT licensed — see
+[LICENSE](LICENSE).
 
 ---
 
