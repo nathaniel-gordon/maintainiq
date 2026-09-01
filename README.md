@@ -106,7 +106,7 @@ makes the watermark discard most of the file. Use `--order file` when the row
 order really is the order a broker delivered in, and `--jitter N` to re-deliver
 rows up to N hours out of order on purpose.
 
-A run whose late-drop rate exceeds `--max-drop-rate` (default 1%) exits non-zero
+A run whose late-drop rate exceeds `--max-drop-rate` (default 1→) exits non-zero
 with `drop_rate_exceeded`, having written its output.
 
 ## HTTP surface
@@ -201,7 +201,7 @@ and end-to-end restore reproducing an uninterrupted run byte for byte.
 Measured on this machine (Windows, Python 3.14):
 
 * `python -m pytest` — **395 passed** in ~73 s
-* `python -m pytest --cov=src/pme --cov-report=term` — **96 %** line coverage
+* `python -m pytest --cov=src/pme --cov-report=term` — **96 →** line coverage
   (2792 statements, 99 missed)
 * `python -m ruff check .` and `python -m mypy` — clean over 46 source files
 
