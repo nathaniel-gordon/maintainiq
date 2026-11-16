@@ -4,7 +4,7 @@
 # Python base plus the pinned dependencies. It runs as a non-root user and keeps
 # all mutable state — sqlite database, checkpoints, JSONL feeds — under /data,
 # which is the only path that needs to be a volume.
-FROM python:3.12-slim
+FROM python:3.15-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
